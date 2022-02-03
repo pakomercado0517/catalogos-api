@@ -1,0 +1,35 @@
+const companies = [
+  {
+    name: "Andrea",
+    img: "https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/0f0bff8a6b062d1789ca10d1ef446db0",
+    slogan: "En el nombre del diseño",
+  },
+  {
+    name: "Cklass",
+    img: "https://i.pinimg.com/originals/1e/e8/ea/1ee8ea47ba13c8e643170fc4297e1f88.jpg",
+    slogan: "El Calzado y Vestuario de las Estrallas",
+  },
+  {
+    name: "PriceShoes",
+    img: "https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/8ea71ff03f89cf3fd87ad77969755afe",
+    slogan: "La Moda más Deseada y las más Vendida",
+  },
+  {
+    name: "Concord",
+    img: "https://m.media-amazon.com/images/S/abs-image-upload-na/1/AmazonStores/A1AM78C64UM0Y8/2acbd83ca82f3542fec423cddaf61c55.w400.h400.jpg",
+    slogan: "Los de la Palomita...",
+  },
+  {
+    name: "Betterware",
+    img: "https://betterwareytu.com/wp-content/uploads/2018/04/logo-betterware.jpg",
+  },
+];
+
+const companyMap = companies.map((el) => {
+  return {
+    name: el.name,
+    image: el.img,
+  };
+});
+
+module.exports = companyMap;
