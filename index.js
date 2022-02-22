@@ -12,7 +12,7 @@ const createAllCatalogos = async () => {
   await createCatalogos.concordDb();
   console.log("Catalogos creados con exito...");
 };
-conn.sync({ force: false }).then(() => {
+conn.sync({ force: true }).then(() => {
   server.listen(PORT, async () => {
     try {
       const company = await Company.findAll({});
