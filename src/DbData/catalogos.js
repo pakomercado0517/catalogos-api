@@ -3,21 +3,21 @@ const { Catalogo } = require("../db");
 const cklass = [
   {
     image:
-      "https://www.cklass.com/site/assets/files/1528/promo_semana_feb-min.jpg",
+      "https://www.cklass.com/site/assets/files/1528/estrellas_semana_1-min.jpg",
     url: "https://www.cklass.com/Catalogo/PromoSemanal/",
-    name: "Promoción de la Semana",
+    name: "Estrellas de la Semana",
   },
   {
     image:
-      "https://www.cklass.com/site/assets/files/1533/remate_temporada-min.jpg",
+      "https://www.cklass.com/site/assets/files/1533/super_remate_calzado-min.jpg",
     url: "https://www.cklass.com/Catalogo/Rematetemporada2",
-    name: "Remate de Temporada",
+    name: "Súper Remate",
   },
   {
     image:
-      "https://www.cklass.com/site/assets/files/1514/remate_temporada-min.jpg",
+      "https://www.cklass.com/site/assets/files/1514/super_remate_ropa-min.jpg",
     url: "https://www.cklass.com/Catalogo/Rematetemporada",
-    name: "Remate de Temporada",
+    name: "Súper Remate",
   },
   {
     image: "https://www.cklass.com/site/assets/files/1446/fashionline.jpg",
@@ -123,7 +123,7 @@ const andrea = [
   },
   {
     image:
-      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/14-1-1-1-30/Imagen/attachments/LENCERIA%20Y%20VESTIR%20INTERIOR.jpg",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/14-1-1-1-30/Imagen/attachments/LENCERIA%20VESTIR%20INTERIOR.jpg",
     url: "http://cdn-img.andrea.com/mx/1/14/",
     name: "LENCERÍA & VESTIR INTERIOR",
   },
@@ -201,13 +201,19 @@ const andrea = [
   },
   {
     image:
-      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/207-1-1-1-30/Imagen/attachments/SAN%20VALENTIN.jpg",
-    url: "http://cdn-img.andrea.com/mx/1/207/",
-    name: "SAN VALENTÍN",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/199-1-1-1-30/Imagen/attachments/REGRESO%20A%20CLASES.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/199/",
+    name: "REGRESO A CLASES",
   },
   {
     image:
-      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/42-1-1-1-30/Imagen/attachments/DR.%20SCHOLLS.jpg",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/439-1-1-1-30/Imagen/attachments/F21%20AERO%20URBANOS.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/439/",
+    name: "F21 | AERO | URBANOS",
+  },
+  {
+    image:
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/42-1-1-1-30/Imagen/attachments/DR%20SCHOLLS.jpg",
     url: "http://cdn-img.andrea.com/mx/1/42/",
     name: "DR. SCHOLLS",
   },
@@ -341,20 +347,32 @@ const andrea = [
 
 const priceShoes = [
   {
+    image: "https://images.priceshoes.digital/catalogos/1049264_0.jpg",
+    url: "https://www.priceshoes.com/catalogos/1049264",
+  },
+  {
+    image: "https://images.priceshoes.digital/catalogos/1049274_0.jpg",
+    url: "https://www.priceshoes.com/catalogos/1049274",
+  },
+  {
+    image: "https://images.priceshoes.digital/catalogos/1048822_0.jpg",
+    url: "https://www.priceshoes.com/catalogos/1048822",
+  },
+  {
+    image: "https://images.priceshoes.digital/catalogos/1042320_0.jpg",
+    url: "https://www.priceshoes.com/catalogos/1042320",
+  },
+  {
+    image: "https://images.priceshoes.digital/catalogos/1042870_0.jpg",
+    url: "https://www.priceshoes.com/catalogos/1042870",
+  },
+  {
     image: "https://images.priceshoes.digital/catalogos/1043091_0.jpg",
     url: "https://www.priceshoes.com/catalogos/1043091",
   },
   {
     image: "https://images.priceshoes.digital/catalogos/1041071_0.jpg",
     url: "https://www.priceshoes.com/catalogos/1041071",
-  },
-  {
-    image: "https://images.priceshoes.digital/catalogos/1037046_0.jpg",
-    url: "https://www.priceshoes.com/catalogos/1037046",
-  },
-  {
-    image: "https://images.priceshoes.digital/catalogos/1016995_0.jpg",
-    url: "https://www.priceshoes.com/catalogos/1016995",
   },
   {
     image: "https://images.priceshoes.digital/catalogos/1036608_0.jpg",
@@ -365,10 +383,6 @@ const priceShoes = [
     url: "https://www.priceshoes.com/catalogos/1034987",
   },
   {
-    image: "https://images.priceshoes.digital/catalogos/1034990_0.jpg",
-    url: "https://www.priceshoes.com/catalogos/1034990",
-  },
-  {
     image: "https://images.priceshoes.digital/catalogos/KidsT1OI21_0.jpg",
     url: "https://www.priceshoes.com/catalogos/KidsT1OI21",
   },
@@ -377,56 +391,8 @@ const priceShoes = [
     url: "https://www.priceshoes.com/catalogos/todoenuno21",
   },
   {
-    image: "https://images.priceshoes.digital/catalogos/jeansotoinv2021_0.jpg",
-    url: "https://www.priceshoes.com/catalogos/jeansotoinv2021",
-  },
-  {
-    image: "https://images.priceshoes.digital/catalogos/Botas2021_0.jpg",
-    url: "https://www.priceshoes.com/catalogos/Botas2021",
-  },
-  {
-    image: "https://images.priceshoes.digital/catalogos/Caballeros20_21_0.jpg",
-    url: "https://www.priceshoes.com/catalogos/Caballeros20_21",
-  },
-  {
-    image: "https://images.priceshoes.digital/catalogos/LovetoLounge_0.jpg",
-    url: "https://www.priceshoes.com/catalogos/LovetoLounge",
-  },
-  {
-    image: "https://images.priceshoes.digital/catalogos/Accesorios2021_0.jpg",
-    url: "https://www.priceshoes.com/catalogos/Accesorios2021",
-  },
-  {
-    image: "https://images.priceshoes.digital/catalogos/Escolar2021_0.jpg",
-    url: "https://www.priceshoes.com/catalogos/Escolar2021",
-  },
-  {
-    image: "https://images.priceshoes.digital/catalogos/Caballeros20_21_0.jpg",
-    url: "https://www.priceshoes.com/catalogos/Caballeros20_21",
-  },
-  {
-    image: "https://images.priceshoes.digital/catalogos/LovetoLounge_0.jpg",
-    url: "https://www.priceshoes.com/catalogos/LovetoLounge",
-  },
-  {
-    image: "https://images.priceshoes.digital/catalogos/Accesorios2021_0.jpg",
-    url: "https://www.priceshoes.com/catalogos/Accesorios2021",
-  },
-  {
-    image: "https://images.priceshoes.digital/catalogos/VestirCasual2021_0.jpg",
-    url: "https://www.priceshoes.com/catalogos/VestirCasual2021",
-  },
-  {
     image: "https://images.priceshoes.digital/catalogos/Confort2021_0.jpg",
     url: "https://www.priceshoes.com/catalogos/Confort2021",
-  },
-  {
-    image: "https://images.priceshoes.digital/catalogos/sandalias2021_0.jpg",
-    url: "https://www.priceshoes.com/catalogos/sandalias2021",
-  },
-  {
-    image: "https://images.priceshoes.digital/catalogos/Todohasta199_0.jpg",
-    url: "https://www.priceshoes.com/catalogos/Todohasta199",
   },
 ];
 
