@@ -341,16 +341,48 @@ const andrea = [
 
 const priceShoes = [
   {
+    image: "https://images.priceshoes.digital/catalogos/1056847_0.jpg",
+    url: "https://www.priceshoes.com/catalogos/1056847",
+  },
+  {
+    image: "https://images.priceshoes.digital/catalogos/op_snd22_0.jpg",
+    url: "https://www.priceshoes.com/catalogos/op_snd22",
+  },
+  {
+    image: "https://images.priceshoes.digital/catalogos/1056066_0.jpg",
+    url: "https://www.priceshoes.com/catalogos/1056066",
+  },
+  {
+    image: "https://images.priceshoes.digital/catalogos/pricepacks_0.jpg",
+    url: "https://www.priceshoes.com/catalogos/pricepacks",
+  },
+  {
+    image: "https://images.priceshoes.digital/catalogos/1055798_0.jpg",
+    url: "https://www.priceshoes.com/catalogos/1055798",
+  },
+  {
+    image: "https://images.priceshoes.digital/catalogos/1055575_0.jpg",
+    url: "https://www.priceshoes.com/catalogos/1055575",
+  },
+  {
+    image: "https://images.priceshoes.digital/catalogos/1055628_0.jpg",
+    url: "https://www.priceshoes.com/catalogos/1055628",
+  },
+  {
+    image: "https://images.priceshoes.digital/catalogos/1054116_0.jpg",
+    url: "https://www.priceshoes.com/catalogos/1054116",
+  },
+  {
+    image: "https://images.priceshoes.digital/catalogos/1052583_0.jpg",
+    url: "https://www.priceshoes.com/catalogos/1052583",
+  },
+  {
     image: "https://images.priceshoes.digital/catalogos/1051439_0.jpg",
     url: "https://www.priceshoes.com/catalogos/1051439",
   },
   {
     image: "https://images.priceshoes.digital/catalogos/1052257_0.jpg",
     url: "https://www.priceshoes.com/catalogos/1052257",
-  },
-  {
-    image: "https://images.priceshoes.digital/catalogos/1049633_0.jpg",
-    url: "https://www.priceshoes.com/catalogos/1049633",
   },
   {
     image: "https://images.priceshoes.digital/catalogos/1050758_0.jpg",
@@ -373,40 +405,12 @@ const priceShoes = [
     url: "https://www.priceshoes.com/catalogos/1050749",
   },
   {
-    image: "https://images.priceshoes.digital/catalogos/1049630_0.jpg",
-    url: "https://www.priceshoes.com/catalogos/1049630",
-  },
-  {
     image: "https://images.priceshoes.digital/catalogos/1049264_0.jpg",
     url: "https://www.priceshoes.com/catalogos/1049264",
   },
   {
     image: "https://images.priceshoes.digital/catalogos/1049274_0.jpg",
     url: "https://www.priceshoes.com/catalogos/1049274",
-  },
-  {
-    image: "https://images.priceshoes.digital/catalogos/1048822_0.jpg",
-    url: "https://www.priceshoes.com/catalogos/1048822",
-  },
-  {
-    image: "https://images.priceshoes.digital/catalogos/1042320_0.jpg",
-    url: "https://www.priceshoes.com/catalogos/1042320",
-  },
-  {
-    image: "https://images.priceshoes.digital/catalogos/1042870_0.jpg",
-    url: "https://www.priceshoes.com/catalogos/1042870",
-  },
-  {
-    image: "https://images.priceshoes.digital/catalogos/1043091_0.jpg",
-    url: "https://www.priceshoes.com/catalogos/1043091",
-  },
-  {
-    image: "https://images.priceshoes.digital/catalogos/1034987_0.jpg",
-    url: "https://www.priceshoes.com/catalogos/1034987",
-  },
-  {
-    image: "https://images.priceshoes.digital/catalogos/todoenuno21_0.jpg",
-    url: "https://www.priceshoes.com/catalogos/Confort2021",
   },
 ];
 
