@@ -2,89 +2,118 @@ const { Catalogo } = require("../db");
 
 const cklass = [
   {
-    image: "https://www.cklass.com/site/assets/files/1529/8.jpg",
+    image: "https://www.cklass.com/site/assets/files/1529/4.jpg",
     url: "https://www.cklass.com/Catalogo/RebajasRopa",
     name: "Rebajas Cklass",
   },
   {
-    image: "https://www.cklass.com/site/assets/files/1528/7.jpg",
+    image: "https://www.cklass.com/site/assets/files/1528/3.jpg",
     url: "https://www.cklass.com/Catalogo/RebajasCalzado",
     name: "Rebajas Cklass",
   },
   {
-    image: "https://www.cklass.com/site/assets/files/1446/fashionline.jpg",
+    image: "https://www.cklass.com/site/assets/files/1514/portada1.jpg",
+    url: "https://www.cklass.com/Catalogo/backtoschool/",
+    name: "Back to School",
+  },
+  {
+    image: "https://www.cklass.com/site/assets/files/1446/fashionline-min.jpg",
     url: "https://www.cklass.com/Catalogo/Fashionline/",
     name: "Colección",
   },
   {
-    image: "https://www.cklass.com/site/assets/files/1515/lencer_a_1.jpg",
+    image: "https://www.cklass.com/site/assets/files/1515/2.jpg",
     url: "https://www.cklass.com/Catalogo/Lenceria/",
-    name: "Lencería",
+    name: "Colección",
   },
   {
-    image:
-      "https://www.cklass.com/site/assets/files/1576/we_cosmetics_verano.jpg",
+    image: "https://www.cklass.com/site/assets/files/1576/3.jpg",
     url: "https://www.cklass.com/Catalogo/WeCosmetics/",
-    name: "We Cosmetics",
+    name: "Colección",
   },
   {
-    image: "https://www.cklass.com/site/assets/files/1641/cklass_home.jpg",
+    image: "https://www.cklass.com/site/assets/files/1641/4.jpg",
     url: "https://www.cklass.com/Catalogo/Home",
-    name: "Cklass Home",
-  },
-  {
-    image: "https://www.cklass.com/site/assets/files/1398/c_mujer.jpg",
-    url: "https://www.cklass.com/Catalogo/Dama/",
-    name: "Dama",
-  },
-  {
-    image: "https://www.cklass.com/site/assets/files/1294/confort.jpg",
-    url: "https://www.cklass.com/Catalogo/Confort/",
-    name: "Confort",
-  },
-  {
-    image: "https://www.cklass.com/site/assets/files/1296/gala_glamour.jpg",
-    url: "https://www.cklass.com/Catalogo/Gala/",
-    name: "Gala & Glamour",
-  },
-  {
-    image: "https://www.cklass.com/site/assets/files/1383/six_d_o.jpg",
-    url: "https://www.cklass.com/Catalogo/Six/",
-    name: "Six & Duo Pack",
-  },
-  {
-    image: "https://www.cklass.com/site/assets/files/1309/bolsos.jpg",
-    url: "https://www.cklass.com/Catalogo/Bolsos/",
     name: "Colección",
   },
   {
     image:
-      "https://www.cklass.com/site/assets/files/1306/calzado_caballero.jpg",
+      "https://www.cklass.com/site/assets/files/1700/portadita_curvy-min.jpg",
+    url: "https://www.cklass.com/Catalogo/CurvyFashionline",
+    name: "Colección",
+  },
+  {
+    image: "https://www.cklass.com/site/assets/files/1701/jeans_oi22-min.jpg",
+    url: "https://www.cklass.com/Catalogo/JeansFashionline",
+    name: "Colección",
+  },
+  {
+    image: "https://www.cklass.com/site/assets/files/1398/calzado_dama-min.jpg",
+    url: "https://www.cklass.com/Catalogo/Dama/",
+    name: "Colección",
+  },
+  {
+    image: "https://www.cklass.com/site/assets/files/1294/6.jpg",
+    url: "https://www.cklass.com/Catalogo/Confort/",
+    name: "Colección",
+  },
+  {
+    image: "https://www.cklass.com/site/assets/files/1296/7.jpg",
+    url: "https://www.cklass.com/Catalogo/Gala/",
+    name: "Colección",
+  },
+  {
+    image: "https://www.cklass.com/site/assets/files/1295/urban-min.jpg",
+    url: "https://www.cklass.com/Catalogo/Urban",
+    name: "Colección",
+  },
+  {
+    image: "https://www.cklass.com/site/assets/files/1535/10.jpg",
+    url: "https://www.cklass.com/Catalogo/BotasBotines/",
+    name: "Colección",
+  },
+  {
+    image: "https://www.cklass.com/site/assets/files/1383/9.jpg",
+    url: "https://www.cklass.com/Catalogo/Six/",
+    name: "Colección",
+  },
+  {
+    image: "https://www.cklass.com/site/assets/files/1309/11.jpg",
+    url: "https://www.cklass.com/Catalogo/Bolsos/",
+    name: "Colección",
+  },
+  {
+    image: "https://www.cklass.com/site/assets/files/1306/12.jpg",
     url: "https://www.cklass.com/Catalogo/Caballero/",
-    name: "Calzado",
+    name: "Colección",
   },
   {
-    image: "https://www.cklass.com/site/assets/files/1424/ropa_caballero.jpg",
+    image: "https://www.cklass.com/site/assets/files/1424/13.jpg",
     url: "https://www.cklass.com/Catalogo/Caballero2/",
-    name: "Ropa",
+    name: "Colección",
   },
   {
-    image: "https://www.cklass.com/site/assets/files/1311/sportbrands.jpg",
+    image: "https://www.cklass.com/site/assets/files/1311/14.jpg",
     url: "https://www.cklass.com/Catalogo/SportBrands",
     name: "Sport Brands",
   },
   {
-    image: "https://www.cklass.com/site/assets/files/1310/kids_ni_a.jpg",
+    image: "https://www.cklass.com/site/assets/files/1626/15.jpg",
+    url: "https://www.cklass.com/Catalogo/SportBrands2",
+    name: "Sport Brands",
+  },
+  {
+    image: "https://www.cklass.com/site/assets/files/1310/16.jpg",
     url: "https://www.cklass.com/Catalogo/Kids/",
     name: "Kids- Niña",
   },
   {
-    image: "https://www.cklass.com/site/assets/files/1534/kids_ni_o.jpg",
+    image: "https://www.cklass.com/site/assets/files/1534/17.jpg",
     url: "https://www.cklass.com/Catalogo/Kids2/",
     name: "Kids - Niño",
   },
   {
-    image: "https://www.cklass.com/site/assets/files/1632/bts.jpg",
+    image: "https://www.cklass.com/site/assets/files/1632/portada1.jpg",
     url: "https://www.cklass.com/Catalogo/backtoschool",
     name: "Back to School",
   },
@@ -93,268 +122,336 @@ const cklass = [
 const andrea = [
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/263-1-1-1-30/Imagen/attachments/CALZADO%20DAMA.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/263/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/263-1-1-1-30/Imagen/attachments/CALZADO%20DAMA.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/263/",
     name: "CALZADO DAMA",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/241-1-1-1-30/Imagen/attachments/ANDREA%20VESTIR.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/241/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/241-1-1-1-30/Imagen/attachments/ANDREA%20VESTIR.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/241/",
     name: "ANDREA VESTIR",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/446-1-1-1-30/Imagen/attachments/ANDREA%20HOME.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/446/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/446-1-1-1-30/Imagen/attachments/ANDREA%20HOME.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/446/",
     name: "ANDREA HOME",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/14-1-1-1-30/Imagen/attachments/LENCERIA%20VESTIR%20INTERIOR.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/14/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/14-1-1-1-30/Imagen/attachments/LENCERIA%20VESTIR%20INTERIOR.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/14/",
     name: "LENCERÍA & VESTIR INTERIOR",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/16-1-1-1-30/Imagen/attachments/BELLEZA%20INTEGRAL%20DAMA.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/16/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/16-1-1-1-30/Imagen/attachments/BELLEZA%20INTEGRAL%20DAMA.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/16/",
     name: "BELLEZA INTEGRAL DAMA",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/89-1-1-1-30/Imagen/attachments/CALZADO%20CONFORT.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/89/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/89-1-1-1-30/Imagen/attachments/CALZADO%20CONFORT.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/89/",
     name: "CALZADO CONFORT",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/5-1-1-1-30/Imagen/attachments/CALZADO%20CABALLERO.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/5/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/5-1-1-1-30/Imagen/attachments/CALZADO%20CABALLERO.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/5/",
     name: "CALZADO CABALLERO",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/36-1-1-1-30/Imagen/attachments/VESTIR%20CABALLERO.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/36/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/36-1-1-1-30/Imagen/attachments/VESTIR%20CABALLERO.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/36/",
     name: "VESTIR CABALLERO",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/242-1-1-1-30/Imagen/attachments/INFANTIL.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/242/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/242-1-1-1-30/Imagen/attachments/INFANTIL.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/242/",
     name: "INFANTIL",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/434-1-1-1-30/Imagen/attachments/INFANTIL%20BABY.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/434/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/434-1-1-1-30/Imagen/attachments/INFANTIL%20BABY.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/434/",
     name: "INFANTIL BABY",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/94-1-1-1-30/Imagen/attachments/ANDREA%20TEENS.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/94/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/74-1-1-1-30/Imagen/attachments/COLEGIAL.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/74/",
+    name: "COLEGIAL",
+  },
+  {
+    image:
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/94-1-1-1-30/Imagen/attachments/ANDREA%20TEENS.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/94/",
     name: "ANDREA TEENS",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/18-1-1-1-30/Imagen/attachments/BOLSAS%20Y%20ACCESORIOS.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/18/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/18-1-1-1-30/Imagen/attachments/BOLSAS%20Y%20ACCESORIOS.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/18/",
     name: "BOLSAS Y ACCESORIOS",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/337-1-1-1-30/Imagen/attachments/DEPORTIVO%20COMPLETO.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/337/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/337-1-1-1-30/Imagen/attachments/DEPORTIVO%20COMPLETO.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/337/",
     name: "DEPORTIVO COMPLETO",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/410-1-1-1-30/Imagen/attachments/ANDREA%20SPORT.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/410/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/410-1-1-1-30/Imagen/attachments/ANDREA%20SPORT.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/410/",
     name: "ANDREA SPORT",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/411-1-1-1-30/Imagen/attachments/FERRATO%20SPORT.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/411/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/411-1-1-1-30/Imagen/attachments/FERRATO%20SPORT.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/411/",
     name: "FERRATO SPORT",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/364-1-1-17-30/Imagen/attachments/OUTLET.jpg",
-    url: "https://cdn-img.andrea.com/mx/17/364/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/374-1-1-17-30/Imagen/attachments/OUTLET.jpg",
+    url: "http://cdn-img.andrea.com/mx/17/374/",
     name: "OUTLET",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/453-1-1-1-30/Imagen/attachments/DIA%20DEL%20PADRE.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/453/",
-    name: "DÍA DEL PADRE",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/283-1-1-1-30/Imagen/attachments/TROPICAL.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/283/",
+    name: "TROPICAL",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/310-1-1-1-30/Imagen/attachments/BOTAS%20DE%20LLUVIA.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/310/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/456-1-1-1-30/Imagen/attachments/EL%20COLOR%20DEL%20VERANO.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/456/",
+    name: "EL COLOR DEL VERANO",
+  },
+  {
+    image:
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/429-1-1-1-30/Imagen/attachments/MID%20SEASON.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/429/",
+    name: "MID SEASON",
+  },
+  {
+    image:
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/439-1-1-1-30/Imagen/attachments/AERO%20F21.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/439/",
+    name: "AERO | F21",
+  },
+  {
+    image:
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/310-1-1-1-30/Imagen/attachments/BOTAS%20DE%20LLUVIA.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/310/",
     name: "BOTAS DE LLUVIA",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/42-1-1-1-30/Imagen/attachments/DR%20SCHOLLS.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/42/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/454-1-1-1-30/Imagen/attachments/LO%20MAS%20TRENDY.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/454/",
+    name: "LO MÁS TRENDY",
+  },
+  {
+    image:
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/42-1-1-1-30/Imagen/attachments/DR%20SCHOLLS.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/42/",
     name: "DR. SCHOLLS",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/283-1-1-1-30/Imagen/attachments/ANDREA%20TROPICAL.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/283/",
-    name: "ANDREA TROPICAL",
-  },
-  {
-    image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/407-1-1-1-30/Imagen/attachments/URBANO%20DEPORTIVO.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/407/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/407-1-1-1-30/Imagen/attachments/URBANO%20DEPORTIVO.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/407/",
     name: "URBANO DEPORTIVO",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/412-1-1-1-30/Imagen/attachments/DEPORTIVO%20INFANTIL.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/412/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/412-1-1-1-30/Imagen/attachments/DEPORTIVO%20INFANTIL.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/412/",
     name: "DEPORTIVO INFANTIL",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/59-1-1-1-30/Imagen/attachments/ADIDAS.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/59/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/59-1-1-1-30/Imagen/attachments/ADIDAS.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/59/",
     name: "ADIDAS",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/60-1-1-1-30/Imagen/attachments/NIKE.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/60/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/60-1-1-1-30/Imagen/attachments/NIKE.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/60/",
     name: "NIKE",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/63-1-1-1-30/Imagen/attachments/PUMA.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/63/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/63-1-1-1-30/Imagen/attachments/PUMA.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/63/",
     name: "PUMA",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/62-1-1-1-30/Imagen/attachments/REEBOK.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/62/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/62-1-1-1-30/Imagen/attachments/REEBOK.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/62/",
     name: "REEBOK",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/334-1-1-1-30/Imagen/attachments/AEROPOSTALE.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/334/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/334-1-1-1-30/Imagen/attachments/AEROPOSTALE.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/334/",
     name: "AEROPOSTALE",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/336-1-1-1-30/Imagen/attachments/VANS.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/336/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/336-1-1-1-30/Imagen/attachments/VANS.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/336/",
     name: "VANS",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/289-1-1-1-30/Imagen/attachments/UNDER%20ARMOUR.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/289/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/289-1-1-1-30/Imagen/attachments/UNDER%20ARMOUR.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/289/",
     name: "UNDER ARMOUR",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/249-1-1-1-30/Imagen/attachments/SKECHERS.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/249/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/249-1-1-1-30/Imagen/attachments/SKECHERS.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/249/",
     name: "SKECHERS",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/247-1-1-1-30/Imagen/attachments/PIRMA.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/247/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/247-1-1-1-30/Imagen/attachments/PIRMA.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/247/",
     name: "PIRMA",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/287-1-1-1-30/Imagen/attachments/PANAM.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/287/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/287-1-1-1-30/Imagen/attachments/PANAM.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/287/",
     name: "PANAM",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/255-1-1-1-30/Imagen/attachments/WILSON.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/255/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/255-1-1-1-30/Imagen/attachments/WILSON.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/255/",
     name: "WILSON",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/435-1-1-1-30/Imagen/attachments/POLO%20CLUB.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/435/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/435-1-1-1-30/Imagen/attachments/POLO%20CLUB.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/435/",
     name: "POLO CLUB",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/444-1-1-1-30/Imagen/attachments/LAMBORGHINI.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/444/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/444-1-1-1-30/Imagen/attachments/LAMBORGHINI.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/444/",
     name: "LAMBORGHINI",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/332-1-1-1-30/Imagen/attachments/EVERLAST.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/332/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/332-1-1-1-30/Imagen/attachments/EVERLAST.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/332/",
     name: "EVERLAST",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/419-1-1-1-30/Imagen/attachments/PARA%20LA%20AVENTURA.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/419/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/419-1-1-1-30/Imagen/attachments/PARA%20LA%20AVENTURA.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/419/",
     name: "PARA LA AVENTURA",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/307-1-1-1-30/Imagen/attachments/PROFESIONAL%20E%20INDUSTRIAL.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/307/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/307-1-1-1-30/Imagen/attachments/PROFESIONAL%20E%20INDUSTRIAL.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/307/",
     name: "PROFESIONAL E INDUSTRIAL",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/217-1-1-1-30/Imagen/attachments/ACCESORIOS%20DEPORTIVOS.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/217/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/217-1-1-1-30/Imagen/attachments/ACCESORIOS%20DEPORTIVOS.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/217/",
     name: "ACCESORIOS DEPORTIVOS",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/392-1-1-1-30/Imagen/attachments/AFTER%20SPORT.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/392/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/392-1-1-1-30/Imagen/attachments/AFTER%20SPORT.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/392/",
     name: "AFTER SPORT",
   },
   {
     image:
-      "https://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/294-1-1-1-30/Imagen/attachments/ZONA%20DESCUENTOS.jpg",
-    url: "https://cdn-img.andrea.com/mx/1/294/",
+      "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/294-1-1-1-30/Imagen/attachments/ZONA%20DESCUENTOS.jpg",
+    url: "http://cdn-img.andrea.com/mx/1/294/",
     name: "ZONA DESCUENTOS",
   },
 ];
 
 const priceShoes = [
   {
-    image: "https://images.priceshoes.digital/catalogos/1056847_0.jpg",
-    url: "https://www.priceshoes.com/catalogos/1056847",
+    image: "https://images.priceshoes.digital/catalogos/1058073_0.jpg",
+    url: "https://www.priceshoes.com/catalogos/1058073",
+  },
+  {
+    image: "https://images.priceshoes.digital/catalogos/1062489_0.jpg",
+    url: "https://www.priceshoes.com/catalogos/1062489",
+  },
+  {
+    image: "https://images.priceshoes.digital/catalogos/1062132_0.jpg",
+    url: "https://www.priceshoes.com/catalogos/1062132",
+  },
+  {
+    image: "https://images.priceshoes.digital/catalogos/1060567_0.jpg",
+    url: "https://www.priceshoes.com/catalogos/1060567",
+  },
+  {
+    image: "https://images.priceshoes.digital/catalogos/1058601_0.jpg",
+    url: "https://www.priceshoes.com/catalogos/1058601",
+  },
+  {
+    image: "https://images.priceshoes.digital/catalogos/1060176_0.jpg",
+    url: "https://www.priceshoes.com/catalogos/1060176",
+  },
+  {
+    image: "https://images.priceshoes.digital/catalogos/1056674_0.jpg",
+    url: "https://www.priceshoes.com/catalogos/1056674",
+  },
+  {
+    image: "https://images.priceshoes.digital/catalogos/1058605_0.jpg",
+    url: "https://www.priceshoes.com/catalogos/1058605",
+  },
+  {
+    image: "https://images.priceshoes.digital/catalogos/1057488_0.jpg",
+    url: "https://www.priceshoes.com/catalogos/1057488",
+  },
+  {
+    image: "https://images.priceshoes.digital/catalogos/1057144_0.jpg",
+    url: "https://www.priceshoes.com/catalogos/1057144",
+  },
+  {
+    image: "https://images.priceshoes.digital/catalogos/1057103_0.jpg",
+    url: "https://www.priceshoes.com/catalogos/1057103",
+  },
+  {
+    image: "https://images.priceshoes.digital/catalogos/1056791_0.jpg",
+    url: "https://www.priceshoes.com/catalogos/1056791",
+  },
+  {
+    image: "https://images.priceshoes.digital/catalogos/1056786_0.jpg",
+    url: "https://www.priceshoes.com/catalogos/1056786",
   },
   {
     image: "https://images.priceshoes.digital/catalogos/op_snd22_0.jpg",
     url: "https://www.priceshoes.com/catalogos/op_snd22",
   },
   {
-    image: "https://images.priceshoes.digital/catalogos/1056066_0.jpg",
-    url: "https://www.priceshoes.com/catalogos/1056066",
-  },
-  {
-    image: "https://images.priceshoes.digital/catalogos/pricepacks_0.jpg",
-    url: "https://www.priceshoes.com/catalogos/pricepacks",
+    image: "https://images.priceshoes.digital/catalogos/1050755_0.jpg",
+    url: "https://www.priceshoes.com/catalogos/1050755",
   },
   {
     image: "https://images.priceshoes.digital/catalogos/1055798_0.jpg",
@@ -365,12 +462,12 @@ const priceShoes = [
     url: "https://www.priceshoes.com/catalogos/1055575",
   },
   {
-    image: "https://images.priceshoes.digital/catalogos/1055628_0.jpg",
-    url: "https://www.priceshoes.com/catalogos/1055628",
+    image: "https://images.priceshoes.digital/catalogos/1055743_0.jpg",
+    url: "https://www.priceshoes.com/catalogos/1055743",
   },
   {
-    image: "https://images.priceshoes.digital/catalogos/1054116_0.jpg",
-    url: "https://www.priceshoes.com/catalogos/1054116",
+    image: "https://images.priceshoes.digital/catalogos/1055628_0.jpg",
+    url: "https://www.priceshoes.com/catalogos/1055628",
   },
   {
     image: "https://images.priceshoes.digital/catalogos/1052583_0.jpg",
