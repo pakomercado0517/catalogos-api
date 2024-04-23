@@ -60,6 +60,8 @@ async function andrea() {
     const browser = await puppeteer.launch({
       headless: "new",
       args: ["--no-sandbox", "--disable-features=site-per-process"],
+      executablePath:
+        "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome", // Ruta del ejecutable de Chrome en macOS
       timeout: 12000,
     });
 
