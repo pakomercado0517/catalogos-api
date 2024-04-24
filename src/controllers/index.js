@@ -51,7 +51,6 @@ module.exports = {
   },
   getCatalogosById: async (req, res, next) => {
     const { id } = req.params;
-    console.log("id", Number.isInteger(id));
     try {
       const company = await Company.findOne({ where: { id } });
 

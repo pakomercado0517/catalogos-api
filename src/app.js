@@ -50,7 +50,7 @@ server.use((err, req, res, next) => {
   const message = err.message || err;
   console.error(err);
   res.status(status).send(message);
-  next(error);
+  next(err);
 });
 
 module.exports = server;
