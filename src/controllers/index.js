@@ -61,7 +61,7 @@ module.exports = {
 
       await scrapingFunction[company.name]();
       console.log("done, catalogues on DB");
-      next(catalogues);
+      // next(catalogues);
 
       // if (id === "2" || id === "3") {
       //   await scrapingFunction[company.name]();
