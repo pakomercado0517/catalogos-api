@@ -37,16 +37,18 @@ module.exports = {
   scrapingCatalogues: async (req, res) => {
     const { id } = req.params;
     try {
-      //Buscamos si hay catalogos para eliminarlos y no repetirlos en la BD
-      await Catalogo.destroy({ where: {} });
+      if (id !== 4) {
+        //Buscamos si hay catalogos para eliminarlos y no repetirlos en la BD
+        await Catalogo.destroy({ where: {} });
 
-      //Hacemos el scraping y creamos la nueva Tabla con los catalogos...
-      const company = await Company.findOne({ where: { id } });
-      const scraping = await scrapingFunction[company.name]();
-      console.log("done, catalogues on DB");
-      console.log("scraping.message", scraping.message);
+        //Hacemos el scraping y creamos la nueva Tabla con los catalogos...
+        const company = await Company.findOne({ where: { id } });
+        const scraping = await scrapingFunction[company.name]();
+        console.log("done, catalogues on DB");
+        console.log("scraping.message", scraping.message);
 
-      res.status(200).json(scraping);
+        res.status(200).json(scraping);
+      }
     } catch (error) {
       res.status(400).send(error.message);
     }
