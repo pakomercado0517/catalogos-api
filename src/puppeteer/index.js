@@ -60,8 +60,8 @@ async function andrea() {
     const browser = await puppeteer.launch({
       headless: "new",
       args: ["--no-sandbox", "--disable-features=site-per-process"],
-      executablePath:
-        "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome", // Ruta del ejecutable de Chrome en macOS
+      // executablePath:
+      // "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
       timeout: 12000,
     });
 
@@ -74,6 +74,7 @@ async function andrea() {
     await page.click("#state-mx");
     await page.keyboard.press("KeyV");
     await page.keyboard.press("Enter");
+    await page.click("#Enviar");
     await page.waitForSelector("main");
     const main = await page.$("main");
     const wrapper = await main.$(".catalog-wrapper");
