@@ -1,4 +1,4 @@
-// const { Catalogo } = require("../db");
+const { Catalogo } = require("../db");
 const cklass = [
   {
     image: "https://cklass.com/cdn/shop/files/ROPA_large.png?v=1695947224",
@@ -637,9 +637,15 @@ const priceShoes = [
 
 const concord = [
   {
-    image: "https://na.kimbicdns.com/mx/data/49/27229/0_s.jpg",
-    url: "https://firebasestorage.googleapis.com/v0/b/catalogosapp-d2a32.appspot.com/o/catalogo_concord%2FCata%CC%81logo%20Sep%20con%20OFERTA.pdf?alt=media&token=a18f5e5f-f010-4362-9c2f-01a1a2587b16",
-    name: "Catálogo Digital",
+    image:
+      "https://www.colchasconcord.com.mx/Archivos/Catalogos_Home/CATBLANCOS.jpg",
+    url: "https://www.colchasconcord.com.mx/archivosD/CatalogoTiendasAbril2024.pdf",
+    name: "Blancos",
+
+    image:
+      "https://www.colchasconcord.com.mx/Archivos/Catalogos_Home/catalogo%20home.jpg",
+    url: "https://www.colchasconcord.com.mx/ArchivosD/Home%20Marzo%20Abril%2024.pdf",
+    name: "Concord Home",
   },
 ];
 
@@ -651,62 +657,62 @@ const betterware = [
   },
 ];
 
-module.exports = { cklass, andrea, priceShoes, concord, betterware };
+// module.exports = { cklass, andrea, priceShoes, concord, betterware };
 
-// module.exports = {
-//   cklassDb: async () => {
-//     const createDb = cklass.map((el) => {
-//       return {
-//         name: el.name,
-//         image: el.image,
-//         url: el.url,
-//         companyId: 2,
-//       };
-//     });
-//     await Catalogo.bulkCreate(createDb);
-//   },
-//   andreaDb: async () => {
-//     const createDb = andrea.map((el) => {
-//       return {
-//         name: el.name,
-//         image: el.image,
-//         url: el.url,
-//         companyId: 1,
-//       };
-//     });
-//     await Catalogo.bulkCreate(createDb);
-//   },
-//   priceShoesDb: async () => {
-//     const createDb = priceShoes.map((el) => {
-//       return {
-//         name: el.name,
-//         image: el.image,
-//         url: el.url,
-//         companyId: 3,
-//       };
-//     });
-//     await Catalogo.bulkCreate(createDb);
-//   },
-//   concordDb: async () => {
-//     const createDb = concord.map((el) => {
-//       return {
-//         name: el.name,
-//         image: el.image,
-//         url: el.url,
-//         companyId: 4,
-//       };
-//     });
-//     await Catalogo.bulkCreate(createDb);
-//   },
-//   betterwareDb: async () => {
-//     const createDb = betterware.map((el) => {
-//       return {
-//         name: el.name,
-//         image: el.image,
-//         url: el.url,
-//         companyId: 5,
-//       };
-//     });
-//     await Catalogo.bulkCreate(createDb);
-//   },
-// };
+module.exports = {
+  // cklassDb: async () => {
+  //   const createDb = cklass.map((el) => {
+  //     return {
+  //       name: el.name,
+  //       image: el.image,
+  //       url: el.url,
+  //       companyId: 2,
+  //     };
+  //   });
+  //   await Catalogo.bulkCreate(createDb);
+  // },
+  // andreaDb: async () => {
+  //   const createDb = andrea.map((el) => {
+  //     return {
+  //       name: el.name,
+  //       image: el.image,
+  //       url: el.url,
+  //       companyId: 1,
+  //     };
+  //   });
+  //   await Catalogo.bulkCreate(createDb);
+  // },
+  // priceShoesDb: async () => {
+  //   const createDb = priceShoes.map((el) => {
+  //     return {
+  //       name: el.name,
+  //       image: el.image,
+  //       url: el.url,
+  //       companyId: 3,
+  //     };
+  //   });
+  //   await Catalogo.bulkCreate(createDb);
+  // },
+  concordDb: async () => {
+    const createDb = concord.map((el) => {
+      return {
+        name: el.name,
+        image: el.image,
+        url: el.url,
+        companyId: 4,
+      };
+    });
+    await Catalogo.bulkCreate(createDb);
+  },
+  // betterwareDb: async () => {
+  //   const createDb = betterware.map((el) => {
+  //     return {
+  //       name: el.name,
+  //       image: el.image,
+  //       url: el.url,
+  //       companyId: 5,
+  //     };
+  //   });
+  //   await Catalogo.bulkCreate(createDb);
+  // },
+};

@@ -1,6 +1,7 @@
 //@ts-ignore
 const { Company, Catalogo } = require("../db");
 const { companyMap } = require("../DbData/companies");
+const { concordDb } = require("../DbData/catalogos");
 const scrapingFunction = require("../puppeteer/index");
 
 module.exports = {
@@ -10,6 +11,7 @@ module.exports = {
       if (companies.length > 0)
         return console.log("companies finded and ready to use");
       await Company.bulkCreate(companyMap);
+      concordDb();
       console.log("Companies created");
     } catch (error) {
       console.log(error);

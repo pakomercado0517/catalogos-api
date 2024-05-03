@@ -17,6 +17,12 @@ const companies = [
     img: "https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/8ea71ff03f89cf3fd87ad77969755afe",
     slogan: "La Moda más Deseada y las más Vendida",
   },
+  {
+    id: "4",
+    name: "concord",
+    img: "https://wp-test-uploaddocs.s3.amazonaws.com/wp-content/uploads/2023/04/10164946/logo-concord-2.png",
+    slogan: "Los #1",
+  },
 ];
 
 const companyMap = companies.map((el) => {
