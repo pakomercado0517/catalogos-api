@@ -19,6 +19,12 @@ const companies = [
   },
   {
     id: "4",
+    name: "vianney",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTJ6BX--xsTQoG_zME2zchRj4reBo7AUlkYlqom0wleg&s",
+    slogan: "Expertos en Confort",
+  },
+  {
+    id: "5",
     name: "concord",
     img: "https://wp-test-uploaddocs.s3.amazonaws.com/wp-content/uploads/2023/04/10164946/logo-concord-2.png",
     slogan: "Los #1",

@@ -182,8 +182,58 @@ async function cklass() {
   }
 }
 
+async function vianney() {
+  const arr = [];
+  try {
+    const browser = await puppeteer.launch({
+      headless: "new",
+      args: ["--no-sandbox", "--disable-features=site-per-process"],
+    });
+
+    const page = await browser.newPage();
+    await page.goto("https://catalogos.vianney.mx/");
+    const main = await page.$("main");
+    const bgWhite = await main.$(".bg-white");
+    const grid = await bgWhite.$(".grid");
+    await grid.waitForSelector("a");
+    const anchors = await grid.$$("a");
+
+    for (const anchor of anchors) {
+      // Extraer href del enlace
+      const href = await (await anchor.getProperty("href")).jsonValue();
+
+      // Extraer src de la imagen dentro del enlace
+      const img = await anchor.$("img");
+      const src = await (await img.getProperty("src")).jsonValue();
+
+      // Extraer texto del h3 dentro del enlace
+      const h3 = await anchor.$("h3");
+      const text = await (await h3.getProperty("textContent")).jsonValue();
+
+      arr.push({ href, src, text });
+    }
+
+    const company = await Company.findOne({ where: { name: "vianney" } });
+
+    await Catalogo.destroy({ where: { companyId: company.id } });
+
+    arr.map(async (item) => {
+      const catalogue = await Catalogo.create({
+        name: item.text,
+        image: item.src,
+        url: item.href,
+      });
+      await catalogue.setCompany(company);
+    });
+
+    await browser.close();
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
 // Llamar a las funciones
 // priceShoesScraping();
 // andreaScraping();
 // cklassScraping();
-module.exports = { priceShoes, andrea, cklass };
+module.exports = { priceShoes, andrea, cklass, vianney };

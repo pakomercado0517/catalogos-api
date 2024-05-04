@@ -641,7 +641,9 @@ const concord = [
       "https://www.colchasconcord.com.mx/Archivos/Catalogos_Home/CATBLANCOS.jpg",
     url: "https://www.colchasconcord.com.mx/archivosD/CatalogoTiendasAbril2024.pdf",
     name: "Blancos",
+  },
 
+  {
     image:
       "https://www.colchasconcord.com.mx/Archivos/Catalogos_Home/catalogo%20home.jpg",
     url: "https://www.colchasconcord.com.mx/ArchivosD/Home%20Marzo%20Abril%2024.pdf",
@@ -699,7 +701,7 @@ module.exports = {
         name: el.name,
         image: el.image,
         url: el.url,
-        companyId: 4,
+        companyId: 5,
       };
     });
     await Catalogo.bulkCreate(createDb);

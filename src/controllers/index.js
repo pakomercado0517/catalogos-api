@@ -1,7 +1,6 @@
 //@ts-ignore
 const { Company, Catalogo } = require("../db");
 const { companyMap } = require("../DbData/companies");
-const { concordDb } = require("../DbData/catalogos");
 const scrapingFunction = require("../puppeteer/index");
 
 module.exports = {
@@ -11,7 +10,6 @@ module.exports = {
       if (companies.length > 0)
         return console.log("companies finded and ready to use");
       await Company.bulkCreate(companyMap);
-      concordDb();
       console.log("Companies created");
     } catch (error) {
       console.log(error);
@@ -37,18 +35,16 @@ module.exports = {
   scrapingCatalogues: async (req, res) => {
     const { id } = req.params;
     try {
-      if (id !== 4) {
-        //Buscamos si hay catalogos para eliminarlos y no repetirlos en la BD
-        await Catalogo.destroy({ where: {} });
+      //Buscamos si hay catalogos para eliminarlos y no repetirlos en la BD
+      await Catalogo.destroy({ where: { id } });
 
-        //Hacemos el scraping y creamos la nueva Tabla con los catalogos...
-        const company = await Company.findOne({ where: { id } });
-        const scraping = await scrapingFunction[company.name]();
-        console.log("done, catalogues on DB");
-        console.log("scraping.message", scraping.message);
+      //Hacemos el scraping y creamos la nueva Tabla con los catalogos...
+      const company = await Company.findOne({ where: { id } });
+      const scraping = await scrapingFunction[company.name]();
+      console.log("done, catalogues on DB");
+      console.log("scraping.message", scraping.message);
 
-        res.status(200).json(scraping);
-      }
+      res.status(200).json(scraping);
     } catch (error) {
       res.status(400).send(error.message);
     }
@@ -63,15 +59,16 @@ module.exports = {
         include: [{ model: Catalogo }],
       });
 
-      await scrapingFunction[company.name]();
-      console.log("done, catalogues on DB");
+      // await scrapingFunction[company.name]();
       // next(catalogues);
 
-      // if (id === "2" || id === "3") {
-      //   await scrapingFunction[company.name]();
-      //   console.log("done, catalogues on DB");
-      //   next(catalogues);
-      // }
+      if (id === 1 || id === 2 || id === 3 || id === 4) {
+        console.log("company.name", company.name);
+        await scrapingFunction[company.name]();
+        console.log("done, catalogues on DB");
+        next(catalogues);
+      }
+
       res.status(200).json(catalogues[0].catalogos);
     } catch (error) {
       res.status(400).json(error.message);
