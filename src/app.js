@@ -22,6 +22,7 @@ server.use(
       "https://catalogos-de-sissy.surge.sh",
       "http://localhost:5173",
       "https://catalogos-de-sissy.vercel.app",
+      "catalogos-de-sissy.vercel.app",
       "https://catalogos-de-sissy-2-0-hnde29zqr-pakomercado0517s-projects.vercel.app/",
     ],
     methods: "GET,POST,PUT,DELETE,OPTIONS",
