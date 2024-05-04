@@ -42,6 +42,8 @@ async function priceShoes() {
       catalogue.setCompany(company);
     });
 
+    console.log("Terminando priceShoes scraping...");
+
     // const result = {
     //   priceShoes: arr,
     // };
@@ -117,6 +119,8 @@ async function andrea() {
       await catalogue.setCompany(company);
     });
 
+    console.log("Terminando andrea scraping...");
+
     // await fs.writeFile(fileURL, JSON.stringify(catalogs, null, 2));
 
     await browser.close();
@@ -175,6 +179,7 @@ async function cklass() {
       });
       await catalogue.setCompany(company);
     });
+    console.log("Terminando cklass scraping...");
 
     await browser.close();
   } catch (error) {
@@ -226,6 +231,7 @@ async function vianney() {
       await catalogue.setCompany(company);
     });
 
+    console.log("Terminando vianney scraping...");
     await browser.close();
   } catch (error) {
     console.log(error.message);
