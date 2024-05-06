@@ -29,6 +29,12 @@ const companies = [
     img: "https://wp-test-uploaddocs.s3.amazonaws.com/wp-content/uploads/2023/04/10164946/logo-concord-2.png",
     slogan: "Los #1",
   },
+  {
+    id: "6",
+    name: "betterware",
+    img: "https://betterwareytu.com/wp-content/uploads/2018/04/logo-betterware.jpg",
+    slogan: "Hogar en Armonía",
+  },
 ];
 
 const companyMap = companies.map((el) => {

@@ -706,15 +706,15 @@ module.exports = {
     });
     await Catalogo.bulkCreate(createDb);
   },
-  // betterwareDb: async () => {
-  //   const createDb = betterware.map((el) => {
-  //     return {
-  //       name: el.name,
-  //       image: el.image,
-  //       url: el.url,
-  //       companyId: 5,
-  //     };
-  //   });
-  //   await Catalogo.bulkCreate(createDb);
-  // },
+  betterwareDb: async () => {
+    const createDb = betterware.map((el) => {
+      return {
+        name: el.name,
+        image: el.image,
+        url: el.url,
+        companyId: 6,
+      };
+    });
+    await Catalogo.bulkCreate(createDb);
+  },
 };
