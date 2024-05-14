@@ -62,11 +62,12 @@ module.exports = {
       // await scrapingFunction[company.name]();
       // next(catalogues);
 
-      if (id === 1 || id === 2 || id === 3 || id === 4) {
+      if (id === 5) {
+        res.status(200).json(catalogues[0].catalogos);
+      } else {
         console.log("company.name", company.name);
         await scrapingFunction[company.name]();
         console.log("done, catalogues on DB");
-        next(catalogues);
       }
 
       res.status(200).json(catalogues[0].catalogos);

@@ -11,10 +11,10 @@ conn.sync({ force: false }).then(() => {
     await companiesFunction.createCompanies();
     // await concordDb();
     // await betterwareDb();
-    await scrapingFunction["andrea"]();
-    await scrapingFunction["cklass"]();
-    await scrapingFunction["priceShoes"]();
-    await scrapingFunction["vianney"]();
+    // await scrapingFunction["andrea"]();
+    // await scrapingFunction["cklass"]();
+    // await scrapingFunction["priceShoes"]();
+    // await scrapingFunction["vianney"]();
     console.log("catalogues ready to use");
     console.log(`listening at ${PORT}`);
   });

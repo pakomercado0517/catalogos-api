@@ -61,11 +61,15 @@ async function andrea() {
   try {
     const browser = await puppeteer.launch({
       headless: "new",
-      args: ["--no-sandbox", "--disable-features=site-per-process"],
+      args: ["--no-sandbox"],
       // executablePath:
       // "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
       timeout: 12000,
     });
+
+    // const browser = await puppeteer.launch({
+    //   headless: false,
+    // });
 
     const browserVersion = await browser.version();
 
@@ -79,7 +83,7 @@ async function andrea() {
     await page.click("#Enviar");
     await page.waitForSelector("main");
     const main = await page.$("main");
-    const wrapper = await main.$(".catalog-wrapper");
+    const wrapper = await main.$("#catalogoPrincipal");
     const reCentral = await wrapper.$$(".re-central");
     const divRow = await reCentral[1].$(".row");
     const colMain = await divRow.$(".col-main.cols-main-catalogs");
