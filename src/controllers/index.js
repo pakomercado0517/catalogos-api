@@ -59,16 +59,7 @@ module.exports = {
         include: [{ model: Catalogo }],
       });
 
-      // await scrapingFunction[company.name]();
-      // next(catalogues);
-
-      if (id === 5) {
-        res.status(200).json(catalogues[0].catalogos);
-      } else {
-        console.log("company.name", company.name);
-        await scrapingFunction[company.name]();
-        console.log("done, catalogues on DB");
-      }
+      if (scrapingFunction[company.name]) scrapingFunction[company.name]();
 
       res.status(200).json(catalogues[0].catalogos);
     } catch (error) {
