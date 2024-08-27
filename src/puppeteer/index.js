@@ -61,12 +61,8 @@ async function andrea() {
   try {
     const browser = await puppeteer.launch({
       headless: "new",
-<<<<<<< HEAD
       // headless: false,
       args: ["--no-sandbox", "--disable-features=site-per-process"],
-=======
-      args: ["--no-sandbox"],
->>>>>>> 3d1db4b4b1b6e559671268aa79736523b7d98d49
       // executablePath:
       // "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
       timeout: 12000,
@@ -82,7 +78,6 @@ async function andrea() {
 
     const page = await browser.newPage();
     await page.goto("https://mx.andrea.com/catalogos");
-<<<<<<< HEAD
     await page.waitForSelector("select[name='estado']");
     await page.select("select[name='estado']", "30");
     await page.waitForSelector(
@@ -90,24 +85,6 @@ async function andrea() {
     );
     await page.click(".vicomstudio-catalogos-andrea-0-x-stateSelectorSubmit");
     await page.click(".vicomstudio-catalogos-andrea-0-x-stateSelectorSubmit");
-=======
-    await page.click("#state-mx");
-    await page.keyboard.press("KeyV");
-    await page.keyboard.press("Enter");
-    await page.click("#Enviar");
-    await page.waitForSelector("main");
-    const main = await page.$("main");
-    const wrapper = await main.$("#catalogoPrincipal");
-    const reCentral = await wrapper.$$(".re-central");
-    const divRow = await reCentral[1].$(".row");
-    const colMain = await divRow.$(".col-main.cols-main-catalogs");
-    const todosCat = await colMain.$(".todoscat");
-    const catalogosxCat = await todosCat.$(".catalogosxcat");
-    await catalogosxCat.waitForSelector("ul", { timeout: 12000 });
-    const ulCat = await catalogosxCat.$("ul");
-    await ulCat.waitForSelector(".sub_cat", { timeout: 30000 });
-    const lists = await ulCat.$$(".sub_cat");
->>>>>>> 3d1db4b4b1b6e559671268aa79736523b7d98d49
 
     const main = await page.$(
       ".vicomstudio-catalogos-andrea-0-x-catalogsWrapper"
