@@ -61,6 +61,11 @@ module.exports = {
         include: [{ model: Catalogo }],
       });
 
+<<<<<<< HEAD
+=======
+      if (scrapingFunction[company.name]) scrapingFunction[company.name]();
+
+>>>>>>> 3d1db4b4b1b6e559671268aa79736523b7d98d49
       res.status(200).json(catalogues[0].catalogos);
     } catch (error) {
       res.status(400).json(error.message);
