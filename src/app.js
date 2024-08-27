@@ -19,7 +19,6 @@ server.use(
   cors({
     // origin: '*'
     origin: [
-      "https://catalogos-de-sissy.surge.sh",
       "http://localhost:5173",
       "https://catalogos-de-sissy.vercel.app",
       "catalogos-de-sissy.vercel.app",
