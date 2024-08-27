@@ -1,7 +1,9 @@
 //@ts-ignore
 const { Company, Catalogo } = require("../db");
 const { companyMap } = require("../DbData/companies");
+const { concordDb, betterwareDb } = require("../DbData/catalogos");
 const scrapingFunction = require("../puppeteer/index");
+const { where, Model } = require("sequelize");
 
 module.exports = {
   createCompanies: async () => {
@@ -59,19 +61,34 @@ module.exports = {
         include: [{ model: Catalogo }],
       });
 
-      // await scrapingFunction[company.name]();
-      // next(catalogues);
-
-      if (id === 1 || id === 2 || id === 3 || id === 4) {
-        console.log("company.name", company.name);
-        await scrapingFunction[company.name]();
-        console.log("done, catalogues on DB");
-        next(catalogues);
-      }
-
       res.status(200).json(catalogues[0].catalogos);
     } catch (error) {
       res.status(400).json(error.message);
+    }
+  },
+  updateCatalogues: async (req, res) => {
+    const { id } = req.params;
+    try {
+      const company = await Company.findOne({
+        where: { id },
+        include: { model: Catalogo },
+      });
+      if (company && company.catalogos.length > 0) {
+        for (const catalogo of company.catalogos) {
+          await catalogo.destroy();
+        }
+        console.log("catalogos eliminados");
+        if (company.id === 5) {
+          await concordDb();
+        } else if (company.id === 6) {
+          await betterwareDb();
+        } else {
+          await scrapingFunction[company.name]();
+        }
+        res.send("success");
+      }
+    } catch (error) {
+      res.status(400).json({ message: error.message });
     }
   },
 

@@ -638,16 +638,16 @@ const priceShoes = [
 const concord = [
   {
     image:
-      "https://www.colchasconcord.com.mx/Archivos/Catalogos_Home/CATBLANCOS.jpg",
-    url: "https://www.colchasconcord.com.mx/archivosD/CatalogoTiendasAbril2024.pdf",
-    name: "Blancos",
+      "https://concordmx.vtexassets.com/assets/vtex.file-manager-graphql/images/1454d590-f10e-4033-89e2-13bb8b6982a5___923d1ba32e6e0a804edca8505e443570.png",
+    url: "https://fiberhome.com.mx/merca/catconcordhome",
+    name: "Concord Home",
   },
 
   {
     image:
-      "https://www.colchasconcord.com.mx/Archivos/Catalogos_Home/catalogo%20home.jpg",
-    url: "https://www.colchasconcord.com.mx/ArchivosD/Home%20Marzo%20Abril%2024.pdf",
-    name: "Concord Home",
+      "https://concordmx.vtexassets.com/assets/vtex.file-manager-graphql/images/4993653d-4d51-412a-8280-2bd9b9194101___74db031fc35c4e6cc4a9ac62cf750592.png",
+    url: "https://fiberhome.com.mx/merca/catdigitaljulio24.pdf",
+    name: "Blancos",
   },
 ];
 

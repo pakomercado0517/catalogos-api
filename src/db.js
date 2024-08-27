@@ -3,22 +3,22 @@ const { Sequelize } = require("sequelize");
 const fs = require("fs");
 const path = require("path");
 const { DB_USER, DB_PASSWORD, DB_HOST, DATABASE_URL } = process.env;
-// let sequelize = new Sequelize(
-//   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/catalogos`,
-//   {
-//     logging: false,
-//     native: false,
-//   }
-// );
-let sequelize = new Sequelize(`${DATABASE_URL}`, {
-  logging: false,
-  native: false,
-  dialectOptions: {
-    ssl: {
-      rejectUnauthorized: false,
-    },
-  },
-});
+let sequelize = new Sequelize(
+  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/catalogos`,
+  {
+    logging: false,
+    native: false,
+  }
+);
+// let sequelize = new Sequelize(`${DATABASE_URL}`, {
+//   logging: false,
+//   native: false,
+//   dialectOptions: {
+//     ssl: {
+//       rejectUnauthorized: false,
+//     },
+//   },
+// });
 
 const basename = path.basename(__filename);
 

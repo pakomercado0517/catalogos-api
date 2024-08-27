@@ -4,6 +4,7 @@ const router = Router();
 const requestFunctions = require("../controllers/index");
 
 router.get("/", requestFunctions.getAllCatalogos);
-router.get("/:id", requestFunctions.scrapingCatalogues);
+router.get("/updateCatalogues/:id", requestFunctions.updateCatalogues);
+router.get("/:id", requestFunctions.getCatalogosById);
 
 module.exports = router;
