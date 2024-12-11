@@ -11,6 +11,7 @@ const { DB_USER, DB_PASSWORD, DB_HOST, DATABASE_URL } = process.env;
 //   }
 // );
 let sequelize = new Sequelize(`${DATABASE_URL}`, {
+  //hacemos la conexion a la base de datos
   logging: false,
   native: false,
   dialectOptions: {
