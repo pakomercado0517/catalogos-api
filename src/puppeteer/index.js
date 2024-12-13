@@ -8,7 +8,7 @@ async function priceShoes() {
   const arr = [];
   try {
     const browser = await puppeteer.launch({
-      headless: "new",
+      // headless: "new",
       args: ["--no-sandbox"],
     });
     const page = await browser.newPage();
@@ -60,8 +60,7 @@ async function andrea() {
   const arr = [];
   try {
     const browser = await puppeteer.launch({
-      headless: "new",
-      // headless: false,
+      // headless: "new",
       args: ["--no-sandbox", "--disable-features=site-per-process"],
       // executablePath:
       // "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
@@ -150,8 +149,8 @@ async function cklass() {
   const catalogosfinded = [];
   try {
     const browser = await puppeteer.launch({
-      headless: "new",
-      args: ["--no-sandbox"],
+      // headless: "new",
+      // args: ["--no-sandbox"],
     });
 
     const page = await browser.newPage();
@@ -207,8 +206,8 @@ async function vianney() {
   const arr = [];
   try {
     const browser = await puppeteer.launch({
-      headless: "new",
-      args: ["--no-sandbox", "--disable-features=site-per-process"],
+      // headless: "new",
+      // args: ["--no-sandbox", "--disable-features=site-per-process"],
     });
 
     const page = await browser.newPage();
