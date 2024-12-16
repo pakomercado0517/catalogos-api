@@ -7,10 +7,7 @@ const { Catalogo, Company } = require("../db");
 async function priceShoes() {
   const arr = [];
   try {
-    const browser = await puppeteer.launch({
-      // headless: "new",
-      args: ["--no-sandbox"],
-    });
+    const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.goto("https://www.priceshoes.com/catalogos");
 
@@ -59,21 +56,7 @@ async function priceShoes() {
 async function andrea() {
   const arr = [];
   try {
-    const browser = await puppeteer.launch({
-      // headless: "new",
-      args: ["--no-sandbox", "--disable-features=site-per-process"],
-      // executablePath:
-      // "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
-      timeout: 12000,
-    });
-
-    // const browser = await puppeteer.launch({
-    //   headless: false,
-    // });
-
-    const browserVersion = await browser.version();
-
-    // console.log("browser.version", browserVersion);
+    const browser = await puppeteer.launch();
 
     const page = await browser.newPage();
     await page.goto("https://mx.andrea.com/catalogos");
@@ -148,10 +131,7 @@ async function cklass() {
   const arr = [];
   const catalogosfinded = [];
   try {
-    const browser = await puppeteer.launch({
-      // headless: "new",
-      // args: ["--no-sandbox"],
-    });
+    const browser = await puppeteer.launch();
 
     const page = await browser.newPage();
     await page.goto("https://cklass.com/pages/catalogos");
@@ -205,10 +185,7 @@ async function cklass() {
 async function vianney() {
   const arr = [];
   try {
-    const browser = await puppeteer.launch({
-      // headless: "new",
-      // args: ["--no-sandbox", "--disable-features=site-per-process"],
-    });
+    const browser = await puppeteer.launch();
 
     const page = await browser.newPage();
     await page.goto("https://catalogos.vianney.mx/");

@@ -83,6 +83,7 @@ module.exports = {
           await betterwareDb();
         } else {
           await scrapingFunction[company.name]();
+          console.log("catalogos añadidos a la base de datos");
         }
         res.send("success");
       }
