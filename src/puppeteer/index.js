@@ -7,7 +7,10 @@ const { Catalogo, Company } = require("../db");
 async function priceShoes() {
   const arr = [];
   try {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+      headless: true,
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    });
     const page = await browser.newPage();
     await page.goto("https://www.priceshoes.com/catalogos");
 
@@ -56,7 +59,10 @@ async function priceShoes() {
 async function andrea() {
   const arr = [];
   try {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+      headless: true,
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    });
 
     const page = await browser.newPage();
     await page.goto("https://mx.andrea.com/catalogos");
@@ -131,7 +137,10 @@ async function cklass() {
   const arr = [];
   const catalogosfinded = [];
   try {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+      headless: true,
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    });
 
     const page = await browser.newPage();
     await page.goto("https://cklass.com/pages/catalogos");
@@ -185,7 +194,10 @@ async function cklass() {
 async function vianney() {
   const arr = [];
   try {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+      headless: true,
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    });
 
     const page = await browser.newPage();
     await page.goto("https://catalogos.vianney.mx/");
