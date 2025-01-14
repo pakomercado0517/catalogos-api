@@ -635,30 +635,6 @@ const priceShoes = [
   },
 ];
 
-const concord = [
-  {
-    image:
-      "https://concordmx.vtexassets.com/assets/vtex.file-manager-graphql/images/1454d590-f10e-4033-89e2-13bb8b6982a5___923d1ba32e6e0a804edca8505e443570.png",
-    url: "https://fiberhome.com.mx/merca/catconcordhome",
-    name: "Concord Home",
-  },
-
-  {
-    image:
-      "https://concordmx.vtexassets.com/assets/vtex.file-manager-graphql/images/4993653d-4d51-412a-8280-2bd9b9194101___74db031fc35c4e6cc4a9ac62cf750592.png",
-    url: "https://fiberhome.com.mx/merca/catdigitaljulio24.pdf",
-    name: "Blancos",
-  },
-];
-
-const betterware = [
-  {
-    image:
-      "https://is4-ssl.mzstatic.com/image/thumb/Purple124/v4/e0/72/d5/e072d57b-e76c-ec63-b844-9974409b61be/source/512x512bb.jpg",
-    url: "https://www.betterware.com.mx/mx/es/catalogo",
-  },
-];
-
 // module.exports = { cklass, andrea, priceShoes, concord, betterware };
 
 module.exports = {
@@ -696,6 +672,22 @@ module.exports = {
   //   await Catalogo.bulkCreate(createDb);
   // },
   concordDb: async () => {
+    const concord = [
+      {
+        image:
+          "https://concordmx.vtexassets.com/assets/vtex.file-manager-graphql/images/1454d590-f10e-4033-89e2-13bb8b6982a5___923d1ba32e6e0a804edca8505e443570.png",
+        url: "https://fiberhome.com.mx/merca/catconcordhome",
+        name: "Concord Home",
+      },
+
+      {
+        image:
+          "https://concordmx.vtexassets.com/assets/vtex.file-manager-graphql/images/4993653d-4d51-412a-8280-2bd9b9194101___74db031fc35c4e6cc4a9ac62cf750592.png",
+        url: "https://fiberhome.com.mx/merca/catdigitaljulio24.pdf",
+        name: "Blancos",
+      },
+    ];
+
     const createDb = concord.map((el) => {
       return {
         name: el.name,
@@ -707,6 +699,13 @@ module.exports = {
     await Catalogo.bulkCreate(createDb);
   },
   betterwareDb: async () => {
+    const betterware = [
+      {
+        image:
+          "https://is4-ssl.mzstatic.com/image/thumb/Purple124/v4/e0/72/d5/e072d57b-e76c-ec63-b844-9974409b61be/source/512x512bb.jpg",
+        url: "https://www.betterware.com.mx/mx/es/catalogo",
+      },
+    ];
     const createDb = betterware.map((el) => {
       return {
         name: el.name,

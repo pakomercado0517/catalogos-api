@@ -20,6 +20,7 @@ server.use(
     // origin: '*'
     origin: [
       "http://localhost:5173",
+      "http://localhost:5174",
       "https://catalogos-de-sissy.vercel.app",
       "catalogos-de-sissy.vercel.app",
       "https://catalogos-de-sissy-2-0-hnde29zqr-pakomercado0517s-projects.vercel.app/",
