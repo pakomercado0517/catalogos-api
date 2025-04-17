@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3001;
 conn.sync({ force: true }).then(() => {
   server.listen(PORT, async () => {
     await companiesFunction.createCompanies();
-    await bulkCompanies;
+    await bulkCompanies();
     // await concordDb();
     // await betterwareDb();
     // await scrapingFunction["andrea"]();
