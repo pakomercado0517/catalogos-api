@@ -6,7 +6,7 @@ const { concordDb, betterwareDb } = require("./src/DbData/catalogos.js");
 
 const PORT = process.env.PORT || 3001;
 
-conn.sync({ force: false }).then(() => {
+conn.sync({ force: true }).then(() => {
   server.listen(PORT, async () => {
     await companiesFunction.createCompanies();
     // await concordDb();

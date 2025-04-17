@@ -8,8 +8,9 @@ module.exports = {
   createCompanies: async () => {
     try {
       const companies = await Company.findAll();
-      if (companies.length > 0)
-        return console.log("companies finded and ready to use");
+      await companies.destroy();
+      // if (companies.length > 0)
+      //   return console.log("companies finded and ready to use");
       await Company.bulkCreate(companyMap);
       console.log("Companies created");
     } catch (error) {
