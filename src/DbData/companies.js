@@ -26,7 +26,7 @@ const companies = [
   {
     id: "5",
     name: "concord",
-    img: "https://wp-test-uploaddocs.s3.amazonaws.com/wp-content/uploads/2023/04/10164946/logo-concord-2.png",
+    img: "https://firebasestorage.googleapis.com/v0/b/catalogosapp-d2a32.appspot.com/o/Images%2Fcolchas%20concord.png?alt=media&token=e2306686-f151-4ffe-924a-a123e11c6a1b",
     slogan: "Los #1",
   },
   {
