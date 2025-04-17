@@ -3,13 +3,15 @@ const { conn } = require("./src/db.js");
 const companiesFunction = require("./src/controllers/index.js");
 const scrapingFunction = require("./src/puppeteer/index.js");
 const { concordDb, betterwareDb } = require("./src/DbData/catalogos.js");
+const bulkCompanies = require("./src/DbData/companies.js");
 
 const PORT = process.env.PORT || 3001;
 
 conn.sync({ force: true }).then(() => {
   server.listen(PORT, async () => {
     await companiesFunction.createCompanies();
-    await concordDb();
+    await bulkCompanies;
+    // await concordDb();
     // await betterwareDb();
     // await scrapingFunction["andrea"]();
     // await scrapingFunction["cklass"]();

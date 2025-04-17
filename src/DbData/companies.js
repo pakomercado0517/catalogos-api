@@ -1,3 +1,5 @@
+const { Company } = require("../db");
+
 const companies = [
   {
     id: "1",
@@ -44,4 +46,6 @@ const companyMap = companies.map((el) => {
   };
 });
 
-module.exports = { companyMap };
+const bulkCompanies = await Company.bulkCreate(companyMap);
+
+module.exports = bulkCompanies;
