@@ -10,12 +10,16 @@ const { DB_USER, DB_PASSWORD, DB_HOST, DATABASE_PUBLIC_URL } = process.env;
 //     native: false,
 //   }
 // );
+// Verificación y corrección del protocolo
+
 let sequelize = new Sequelize(`${DATABASE_PUBLIC_URL}`, {
   //hacemos la conexion a la base de datos
   logging: false,
   native: false,
+  dialect: "postgres",
   dialectOptions: {
     ssl: {
+      require: true,
       rejectUnauthorized: false,
     },
   },
