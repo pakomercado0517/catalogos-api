@@ -1,18 +1,49 @@
 const puppeteer = require("puppeteer");
-const { Catalogo, Company } = require("../db");
+const { Company } = require("../db");
+const { syncCatalogosForCompany } = require("../services/catalogoSync");
 
-// const fs = require("fs").promises;
-// const fileURL = "../src/Db/catalogos.json";
+const BROWSER_ARGS = ["--no-sandbox", "--disable-setuid-sandbox"];
+const PAGE_TIMEOUT_MS =
+  Number(process.env.SCRAPING_PAGE_TIMEOUT_MS) || 30 * 1000;
+const NAVIGATION_TIMEOUT_MS =
+  Number(process.env.SCRAPING_NAVIGATION_TIMEOUT_MS) || 45 * 1000;
+
+async function launchBrowser() {
+  return puppeteer.launch({
+    headless: true,
+    args: BROWSER_ARGS,
+  });
+}
+
+async function closeBrowser(browser) {
+  if (browser) {
+    await browser.close().catch(() => {});
+  }
+}
+
+async function createPage(browser) {
+  const page = await browser.newPage();
+  page.setDefaultTimeout(PAGE_TIMEOUT_MS);
+  page.setDefaultNavigationTimeout(NAVIGATION_TIMEOUT_MS);
+  return page;
+}
+
+async function gotoWithTimeout(page, url) {
+  await page.goto(url, {
+    waitUntil: "domcontentloaded",
+    timeout: NAVIGATION_TIMEOUT_MS,
+  });
+}
 
 async function priceShoes() {
-  const arr = [];
+  let browser;
+  let catalogItems = [];
+  let company;
+
   try {
-    const browser = await puppeteer.launch({
-      headless: true,
-      args: ["--no-sandbox", "--disable-setuid-sandbox"],
-    });
-    const page = await browser.newPage();
-    await page.goto("https://www.priceshoes.com/catalogos");
+    browser = await launchBrowser();
+    const page = await createPage(browser);
+    await gotoWithTimeout(page, "https://www.priceshoes.com/catalogos");
 
     const lists = await page.$$(
       '[class="relative sm:bg-gray-100 flex items-center overflow-hidden"]'
@@ -23,53 +54,40 @@ async function priceShoes() {
       const href = await list.$eval("a[href]", (el) => el.href);
       if (enlace) {
         const imgSrc = await enlace.$eval("img", (item) => item.src);
-        // console.log({ href, imgSrc });
-        arr.push({ href, imgSrc });
+        catalogItems.push({ image: imgSrc, url: href });
       }
     }
 
-    const company = await Company.findOne({
+    company = await Company.findOne({
       where: { name: "priceShoes" },
     });
-
-    await Catalogo.destroy({ where: { companyId: company.id } });
-
-    arr.map(async (item) => {
-      const catalogue = await Catalogo.create({
-        image: item.imgSrc,
-        url: item.href,
-      });
-      catalogue.setCompany(company);
-    });
-
-    console.log("Terminando priceShoes scraping...");
-
-    // const result = {
-    //   priceShoes: arr,
-    // };
-    // catalogs.push(result);
-
-    // await fs.writeFile(fileURL, JSON.stringify(catalogs, null, 2));
-    await browser.close();
   } catch (error) {
-    console.log(error.message);
+    console.error(`[scraping] priceShoes: ${error.message}`);
+    throw error;
+  } finally {
+    await closeBrowser(browser);
   }
+
+  await syncCatalogosForCompany(company, catalogItems);
+  console.log("Terminando priceShoes scraping...");
 }
 
 async function andrea() {
-  const arr = [];
-  try {
-    const browser = await puppeteer.launch({
-      headless: true,
-      args: ["--no-sandbox", "--disable-setuid-sandbox"],
-    });
+  let browser;
+  let catalogItems = [];
+  let company;
 
-    const page = await browser.newPage();
-    await page.goto("https://mx.andrea.com/catalogos");
-    await page.waitForSelector("select[name='estado']");
+  try {
+    browser = await launchBrowser();
+    const page = await createPage(browser);
+    await gotoWithTimeout(page, "https://mx.andrea.com/catalogos");
+    await page.waitForSelector("select[name='estado']", {
+      timeout: PAGE_TIMEOUT_MS,
+    });
     await page.select("select[name='estado']", "30");
     await page.waitForSelector(
-      ".vicomstudio-catalogos-andrea-0-x-stateSelectorSubmit"
+      ".vicomstudio-catalogos-andrea-0-x-stateSelectorSubmit",
+      { timeout: PAGE_TIMEOUT_MS }
     );
     await page.click(".vicomstudio-catalogos-andrea-0-x-stateSelectorSubmit");
     await page.click(".vicomstudio-catalogos-andrea-0-x-stateSelectorSubmit");
@@ -80,17 +98,17 @@ async function andrea() {
     await main.waitForSelector(
       ".vicomstudio-catalogos-andrea-0-x-catalogsList",
       {
-        timeout: 30000,
+        timeout: PAGE_TIMEOUT_MS,
       }
     );
     const ulList = await main.waitForSelector(
-      ".vicomstudio-catalogos-andrea-0-x-catalogsList"
+      ".vicomstudio-catalogos-andrea-0-x-catalogsList",
+      { timeout: PAGE_TIMEOUT_MS }
     );
-    //buscamos y definimos todos los "li" que hay dentro de la lista desordenada
     const lists = await ulList.$$(
       "li.vicomstudio-catalogos-andrea-0-x-catalog"
     );
-    //iteramos con la lista obtenida
+
     for (const list of lists) {
       const enlace = await list.$("a");
       const title = await list.$eval(
@@ -100,50 +118,31 @@ async function andrea() {
       const href = await list.$eval("a[href]", (el) => el.href);
       if (enlace) {
         const imgSrc = await enlace.$eval("img", (item) => item.src);
-        // console.log({ href, imgSrc });
-        arr.push({ href, imgSrc, title });
+        catalogItems.push({ name: title, image: imgSrc, url: href });
       }
     }
 
-    // const result = {
-    //   andrea: arr,
-    // };
-    // catalogs.push(result);
-
-    const company = await Company.findOne({ where: { name: "andrea" } });
-
-    await Catalogo.destroy({ where: { companyId: company.id } });
-
-    arr.map(async (item) => {
-      const catalogue = await Catalogo.create({
-        name: item.title,
-        image: item.imgSrc,
-        url: item.href,
-      });
-      await catalogue.setCompany(company);
-    });
-
-    console.log("Terminando andrea scraping...");
-
-    // await fs.writeFile(fileURL, JSON.stringify(catalogs, null, 2));
-
-    await browser.close();
+    company = await Company.findOne({ where: { name: "andrea" } });
   } catch (error) {
-    console.log(error.message);
+    console.error(`[scraping] andrea: ${error.message}`);
+    throw error;
+  } finally {
+    await closeBrowser(browser);
   }
+
+  await syncCatalogosForCompany(company, catalogItems);
+  console.log("Terminando andrea scraping...");
 }
 
 async function cklass() {
-  const arr = [];
-  const catalogosfinded = [];
-  try {
-    const browser = await puppeteer.launch({
-      headless: true,
-      args: ["--no-sandbox", "--disable-setuid-sandbox"],
-    });
+  let browser;
+  let catalogItems = [];
+  let company;
 
-    const page = await browser.newPage();
-    await page.goto("https://cklass.com/pages/catalogos");
+  try {
+    browser = await launchBrowser();
+    const page = await createPage(browser);
+    await gotoWithTimeout(page, "https://cklass.com/pages/catalogos");
     const main = await page.$("main");
     const sectionTemplate = await main.$(
       "#shopify-section-template--20952891588900__c04b24c1-4fab-468a-9f69-afc4cb457906"
@@ -160,97 +159,68 @@ async function cklass() {
       );
       if (enlace) {
         const imgSrc = await enlace.$eval("img", (item) => item.src);
-        // console.log({ href, imgSrc });
-        arr.push({ href, imgSrc, title });
+        catalogItems.push({ name: title, image: imgSrc, url: href });
       }
     }
-    // const result = {
-    //   cklass: arr,
-    // };
-    // catalogs.push(result);
 
-    // await fs.writeFile(fileURL, JSON.stringify(catalogs, null, 2));
-
-    const company = await Company.findOne({ where: { name: "cklass" } });
-
-    await Catalogo.destroy({ where: { companyId: company.id } });
-
-    arr.map(async (item) => {
-      const catalogue = await Catalogo.create({
-        name: item.title,
-        image: item.imgSrc,
-        url: item.href,
-      });
-      await catalogue.setCompany(company);
-    });
-    console.log("Terminando cklass scraping...");
-
-    await browser.close();
+    company = await Company.findOne({ where: { name: "cklass" } });
   } catch (error) {
-    console.log(error.message);
+    console.error(`[scraping] cklass: ${error.message}`);
+    throw error;
+  } finally {
+    await closeBrowser(browser);
   }
+
+  await syncCatalogosForCompany(company, catalogItems);
+  console.log("Terminando cklass scraping...");
 }
 
 async function vianney() {
-  const arr = [];
-  try {
-    const browser = await puppeteer.launch({
-      headless: true,
-      args: ["--no-sandbox", "--disable-setuid-sandbox"],
-    });
+  let browser;
+  let catalogItems = [];
+  let company;
 
-    const page = await browser.newPage();
-    await page.goto("https://catalogos.vianney.mx/");
+  try {
+    browser = await launchBrowser();
+    const page = await createPage(browser);
+    await gotoWithTimeout(page, "https://catalogos.vianney.mx/");
     const main = await page.$("main");
     const bgWhite = await main.$(".bg-white");
     const grid = await bgWhite.$(".grid");
-    await grid.waitForSelector("a");
+    await grid.waitForSelector("a", { timeout: PAGE_TIMEOUT_MS });
     const anchors = await grid.$$("a");
 
     for (const anchor of anchors) {
-      // Extraer href del enlace
       const href = await (await anchor.getProperty("href")).jsonValue();
-
-      // Extraer src de la imagen dentro del enlace
       const img = await anchor.$("img");
       const src = await (await img.getProperty("src")).jsonValue();
-
-      // Extraer texto del h3 dentro del enlace
       const h3 = await anchor.$("h3");
       const text = await (await h3.getProperty("textContent")).jsonValue();
 
-      arr.push({ href, src, text });
+      catalogItems.push({ name: text, image: src, url: href });
     }
 
-    const company = await Company.findOne({ where: { name: "vianney" } });
-
-    await Catalogo.destroy({ where: { companyId: company.id } });
-
-    arr.map(async (item) => {
-      const catalogue = await Catalogo.create({
-        name: item.text,
-        image: item.src,
-        url: item.href,
-      });
-      await catalogue.setCompany(company);
-    });
-
-    console.log("Terminando vianney scraping...");
-    await browser.close();
+    company = await Company.findOne({ where: { name: "vianney" } });
   } catch (error) {
-    console.log(error.message);
+    console.error(`[scraping] vianney: ${error.message}`);
+    throw error;
+  } finally {
+    await closeBrowser(browser);
   }
+
+  await syncCatalogosForCompany(company, catalogItems);
+  console.log("Terminando vianney scraping...");
 }
 
 async function concord() {
-  const concord = [
+  const company = await Company.findOne({ where: { name: "concord" } });
+  const catalogItems = [
     {
       image:
         "https://concordmx.vtexassets.com/assets/vtex.file-manager-graphql/images/1454d590-f10e-4033-89e2-13bb8b6982a5___923d1ba32e6e0a804edca8505e443570.png",
       url: "https://fiberhome.com.mx/merca/catconcordhome",
       name: "Concord Home",
     },
-
     {
       image:
         "https://concordmx.vtexassets.com/assets/vtex.file-manager-graphql/images/4993653d-4d51-412a-8280-2bd9b9194101___74db031fc35c4e6cc4a9ac62cf750592.png",
@@ -259,37 +229,22 @@ async function concord() {
     },
   ];
 
-  const createDb = concord.map((el) => {
-    return {
-      name: el.name,
-      image: el.image,
-      url: el.url,
-      companyId: 5,
-    };
-  });
-  await Catalogo.bulkCreate(createDb);
+  await syncCatalogosForCompany(company, catalogItems);
+  console.log("Terminando concord scraping...");
 }
+
 async function betterware() {
-  const betterware = [
+  const company = await Company.findOne({ where: { name: "betterware" } });
+  const catalogItems = [
     {
       image:
         "https://is4-ssl.mzstatic.com/image/thumb/Purple124/v4/e0/72/d5/e072d57b-e76c-ec63-b844-9974409b61be/source/512x512bb.jpg",
       url: "https://www.betterware.com.mx/mx/es/catalogo",
     },
   ];
-  const createDb = betterware.map((el) => {
-    return {
-      name: el.name,
-      image: el.image,
-      url: el.url,
-      companyId: 6,
-    };
-  });
-  await Catalogo.bulkCreate(createDb);
+
+  await syncCatalogosForCompany(company, catalogItems);
+  console.log("Terminando betterware scraping...");
 }
 
-// Llamar a las funciones
-// priceShoesScraping();
-// andreaScraping();
-// cklassScraping();
 module.exports = { priceShoes, andrea, cklass, vianney, concord, betterware };
