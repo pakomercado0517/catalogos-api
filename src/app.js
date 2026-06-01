@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const routes = require("./routes/index");
 const cors = require("cors");
+const { getCorsOrigins } = require("./config/cors");
 
 require("./db.js");
 
@@ -24,14 +25,7 @@ server.use(
 );
 server.use(
   cors({
-    // origin: '*'
-    origin: [
-      "http://localhost:5173",
-      "http://localhost:5174",
-      "https://catalogos-de-sissy.vercel.app",
-      "catalogos-de-sissy.vercel.app",
-      "https://catalogos-de-sissy-2-0-hnde29zqr-pakomercado0517s-projects.vercel.app/",
-    ],
+    origin: getCorsOrigins(),
     methods: "GET,POST,PUT,DELETE,OPTIONS",
     credentials: true,
   })
