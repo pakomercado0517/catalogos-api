@@ -1,0 +1,7 @@
+[     424ms] [LOG] Openpay Pixel - ON @ https://www.colchasconcord.com.mx/catalogos:127
+[     892ms] [WARNING] <link rel=preload> must have a valid `as` value @ https://www.colchasconcord.com.mx/catalogos:14
+[     892ms] [WARNING] <link rel=preload> must have a valid `as` value @ https://www.colchasconcord.com.mx/catalogos:14
+[    1284ms] [WARNING] prefetchDefaultPages should only be called before RenderProvider's render. @ https://concordmx.vtexassets.com/_v/public/assets/v1/published/vtex.render-runtime@8.136.2/public/react/common.min.js?async=2&workspace=master:1
+[    2185ms] [ERROR] Not signed in with the identity provider. @ https://www.colchasconcord.com.mx/catalogos:0
+[    2731ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ https://www.colchasconcord.com.mx/catalogos:0
+[   10842ms] [ERROR] [GSI_LOGGER]: FedCM get() rejects with NetworkError: Error retrieving a token. @ https://accounts.google.com/gsi/client:85

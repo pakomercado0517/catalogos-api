@@ -213,21 +213,42 @@ async function vianney() {
 }
 
 async function concord() {
-  const company = await Company.findOne({ where: { name: "concord" } });
-  const catalogItems = [
-    {
-      image:
-        "https://concordmx.vtexassets.com/assets/vtex.file-manager-graphql/images/1454d590-f10e-4033-89e2-13bb8b6982a5___923d1ba32e6e0a804edca8505e443570.png",
-      url: "https://fiberhome.com.mx/merca/catconcordhome",
-      name: "Concord Home",
-    },
-    {
-      image:
-        "https://concordmx.vtexassets.com/assets/vtex.file-manager-graphql/images/4993653d-4d51-412a-8280-2bd9b9194101___74db031fc35c4e6cc4a9ac62cf750592.png",
-      url: "https://fiberhome.com.mx/merca/catdigitaljulio24.pdf",
-      name: "Blancos",
-    },
-  ];
+  let browser;
+  let catalogItems = [];
+  let company;
+
+  try {
+    browser = await launchBrowser();
+    const page = await createPage(browser);
+    await gotoWithTimeout(page, "https://www.colchasconcord.com.mx/catalogos");
+    await page.waitForSelector(
+      'a[href*="tiendas.colchasconcord.mx/Catalogos"]',
+      { timeout: PAGE_TIMEOUT_MS }
+    );
+    const anchors = await page.$$(
+      'a[href*="tiendas.colchasconcord.mx/Catalogos"]'
+    );
+
+    for (const anchor of anchors) {
+      const href = await (await anchor.getProperty("href")).jsonValue();
+      const img = await anchor.$("img");
+      if (!img) {
+        continue;
+      }
+      const src = await (await img.getProperty("src")).jsonValue();
+      const fileName = href.split("/").pop()?.replace(/\.pdf$/i, "") || "";
+      const name = fileName.replace(/_/g, " ");
+
+      catalogItems.push({ name, image: src, url: href });
+    }
+
+    company = await Company.findOne({ where: { name: "concord" } });
+  } catch (error) {
+    console.error(`[scraping] concord: ${error.message}`);
+    throw error;
+  } finally {
+    await closeBrowser(browser);
+  }
 
   await syncCatalogosForCompany(company, catalogItems);
   console.log("Terminando concord scraping...");

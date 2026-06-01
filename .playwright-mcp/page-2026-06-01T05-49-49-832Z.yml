@@ -1,0 +1,149 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e5]:
+    - button [ref=e7]
+    - generic [ref=e9]:
+      - generic "Sección fila" [ref=e10]:
+        - generic [ref=e11]:
+          - link "Logo" [ref=e13] [cursor=pointer]:
+            - /url: /
+            - img "Logo" [ref=e15]
+          - combobox "¿Qué estás buscando?" [ref=e20]:
+            - generic [ref=e21]: ¿Qué estás buscando?
+            - generic [ref=e25]:
+              - textbox "¿Qué estás buscando? Buscar Productos" [ref=e26]:
+                - /placeholder: ¿Qué estás buscando?
+              - button "Buscar Productos" [ref=e29]
+          - button "Registrarme / Iniciar Sesión" [ref=e36]:
+            - generic [ref=e41]: Registrarme / Iniciar Sesión
+          - complementary [ref=e43]:
+            - button [ref=e46]
+      - generic "Sección fila" [ref=e49]:
+        - navigation [ref=e53]:
+          - list [ref=e54]:
+            - listitem [ref=e55]:
+              - link "Recámara" [ref=e57] [cursor=pointer]:
+                - /url: /recamara
+                - generic [ref=e58]: Recámara
+            - listitem [ref=e59]:
+              - link "Bebé" [ref=e61] [cursor=pointer]:
+                - /url: /bebe
+                - generic [ref=e62]: Bebé
+            - listitem [ref=e63]:
+              - link "Infantil" [ref=e65] [cursor=pointer]:
+                - /url: /el-regalo-perfecto
+                - generic [ref=e66]: Infantil
+            - listitem [ref=e67]:
+              - link "Sala y Cocina" [ref=e69] [cursor=pointer]:
+                - /url: /sala
+                - generic [ref=e70]: Sala y Cocina
+            - listitem [ref=e71]:
+              - link "Baño" [ref=e73] [cursor=pointer]:
+                - /url: /bano
+                - generic [ref=e74]: Baño
+            - listitem [ref=e75]:
+              - link "Súper Ofertas" [ref=e77] [cursor=pointer]:
+                - /url: /super-ofertas
+                - generic [ref=e78]: Súper Ofertas
+            - listitem [ref=e79]:
+              - link "Lo más nuevo" [ref=e81] [cursor=pointer]:
+                - /url: /nuevos-productos-2026
+                - generic [ref=e82]: Lo más nuevo
+            - listitem [ref=e83]:
+              - link "Concord Home" [ref=e85] [cursor=pointer]:
+                - /url: /concord-home/
+                - generic [ref=e86]: Concord Home
+            - listitem [ref=e87]:
+              - link "Catálogos" [ref=e89] [cursor=pointer]:
+                - /url: /catalogos
+                - generic [ref=e90]: Catálogos
+            - listitem [ref=e91]:
+              - link "Sucursales" [ref=e93] [cursor=pointer]:
+                - /url: /localizador-de-tiendas
+                - generic [ref=e94]: Sucursales
+    - generic [ref=e96]:
+      - generic "Sección fila" [ref=e98]:
+        - paragraph [ref=e103]: Descarga tus Catálogos
+      - generic "Sección fila" [ref=e105]:
+        - generic [ref=e107]:
+          - link [ref=e111] [cursor=pointer]:
+            - /url: https://tiendas.colchasconcord.mx/Catalogos/NACIONAL_MAYO-JULIO.pdf
+          - link [ref=e115] [cursor=pointer]:
+            - /url: https://tiendas.colchasconcord.mx/Catalogos/DIG_HOME2026.pdf
+      - generic "Sección fila" [ref=e117]:
+        - generic [ref=e119]:
+          - link [ref=e123] [cursor=pointer]:
+            - /url: https://tiendas.colchasconcord.mx/Catalogos/BEBE_MAYO-JULIO.pdf
+          - link [ref=e127] [cursor=pointer]:
+            - /url: https://tiendas.colchasconcord.mx/Catalogos/INFANTIL_MAYO-JULIO.pdf
+      - generic "Sección fila" [ref=e129]:
+        - generic [ref=e131]:
+          - link [ref=e135] [cursor=pointer]:
+            - /url: https://tiendas.colchasconcord.mx/Catalogos/CAT_MUNDIALISTA.pdf
+          - generic [ref=e138]:
+            - link:
+              - /url: /
+  - generic:
+    - generic:
+      - generic:
+        - button:
+          - img
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - article:
+                  - paragraph [ref=e141]: Términos más buscados
+                  - list [ref=e142]:
+                    - listitem [ref=e143]:
+                      - link "1. cobertor" [ref=e144] [cursor=pointer]:
+                        - /url: /cobertor?map=ft&_q=cobertor
+                        - generic [ref=e145]: "1."
+                        - text: cobertor
+                    - listitem [ref=e146]:
+                      - link "2. edredones" [ref=e147] [cursor=pointer]:
+                        - /url: /edredones?map=ft&_q=edredones
+                        - generic [ref=e148]: "2."
+                        - text: edredones
+                    - listitem [ref=e149]:
+                      - link "3. colcha matrimonial" [ref=e150] [cursor=pointer]:
+                        - /url: /colcha%20matrimonial?map=ft&_q=colcha matrimonial
+                        - generic [ref=e151]: "3."
+                        - text: colcha matrimonial
+                    - listitem [ref=e152]:
+                      - link "4. cortinas" [ref=e153] [cursor=pointer]:
+                        - /url: /cortinas?map=ft&_q=cortinas
+                        - generic [ref=e154]: "4."
+                        - text: cortinas
+                    - listitem [ref=e155]:
+                      - link "5. star wars" [ref=e156] [cursor=pointer]:
+                        - /url: /star%20wars?map=ft&_q=star wars
+                        - generic [ref=e157]: "5."
+                        - text: star wars
+                    - listitem [ref=e158]:
+                      - link "6. juego sabanas" [ref=e159] [cursor=pointer]:
+                        - /url: /juego%20sabanas?map=ft&_q=juego sabanas
+                        - generic [ref=e160]: "6."
+                        - text: juego sabanas
+                    - listitem [ref=e161]:
+                      - link "7. edredón ligero" [ref=e162] [cursor=pointer]:
+                        - /url: /edred%C3%B3n%20ligero?map=ft&_q=edredón ligero
+                        - generic [ref=e163]: "7."
+                        - text: edredón ligero
+                    - listitem [ref=e164]:
+                      - link "8. almohadas" [ref=e165] [cursor=pointer]:
+                        - /url: /almohadas?map=ft&_q=almohadas
+                        - generic [ref=e166]: "8."
+                        - text: almohadas
+                    - listitem [ref=e167]:
+                      - link "9. suavitec plus" [ref=e168] [cursor=pointer]:
+                        - /url: /suavitec%20plus?map=ft&_q=suavitec plus
+                        - generic [ref=e169]: "9."
+                        - text: suavitec plus
+                    - listitem [ref=e170]:
+                      - link "10. mandalorian" [ref=e171] [cursor=pointer]:
+                        - /url: /mandalorian?map=ft&_q=mandalorian
+                        - generic [ref=e172]: "10."
+                        - text: mandalorian

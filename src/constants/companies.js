@@ -1,5 +1,11 @@
-const STATIC_CATALOG_COMPANIES = ["concord", "betterware"];
-const PUPPETEER_COMPANIES = ["andrea", "cklass", "priceShoes", "vianney"];
+const STATIC_CATALOG_COMPANIES = ["betterware"];
+const PUPPETEER_COMPANIES = [
+  "andrea",
+  "cklass",
+  "concord",
+  "priceShoes",
+  "vianney",
+];
 
 function isStaticCatalogCompany(companyName) {
   return STATIC_CATALOG_COMPANIES.includes(companyName);
