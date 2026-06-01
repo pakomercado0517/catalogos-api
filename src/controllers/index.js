@@ -3,6 +3,11 @@ const { Company, Catalogo } = require("../db");
 const { companyMap } = require("../DbData/companies");
 // const { concordDb, betterwareDb } = require("../DbData/catalogos");
 const scrapingFunction = require("../puppeteer/");
+const {
+  tryAcquireScrapingLock,
+  releaseScrapingLock,
+  recordCompanyScrapeStart,
+} = require("../middleware/scrapingLimits");
 
 module.exports = {
   createCompanies: async () => {
@@ -33,23 +38,6 @@ module.exports = {
       res.status(400).send(error);
     }
   },
-  scrapingCatalogues: async (req, res) => {
-    const { id } = req.params;
-    try {
-      //Buscamos si hay catalogos para eliminarlos y no repetirlos en la BD
-      await Catalogo.destroy({ where: { id } });
-
-      //Hacemos el scraping y creamos la nueva Tabla con los catalogos...
-      const company = await Company.findOne({ where: { id } });
-      const scraping = await scrapingFunction[company.name]();
-      console.log("done, catalogues on DB");
-      console.log("scraping.message", scraping.message);
-
-      res.status(200).json(scraping);
-    } catch (error) {
-      res.status(400).send(error.message);
-    }
-  },
   getCatalogosById: async (req, res, next) => {
     const { id } = req.params;
     try {
@@ -66,22 +54,46 @@ module.exports = {
   },
   updateCatalogues: async (req, res, next) => {
     const { id } = req.params;
+    const companyKey = String(id);
+
+    if (!tryAcquireScrapingLock(companyKey)) {
+      return res.status(429).json({
+        message: "Ya hay una actualizacion en curso para esta empresa.",
+      });
+    }
+
     try {
       const company = await Company.findOne({
         where: { id },
         include: { model: Catalogo },
       });
+
+      if (!company) {
+        return res.status(404).json({ message: "Empresa no encontrada" });
+      }
+
+      if (typeof scrapingFunction[company.name] !== "function") {
+        return res.status(400).json({
+          message: "Actualizacion no disponible para esta empresa",
+        });
+      }
+
+      recordCompanyScrapeStart(companyKey);
+
       console.log(company.name);
-      if (company && company.catalogos.length > 0) {
+      if (company.catalogos.length > 0) {
         for (const catalogo of company.catalogos) {
           console.log("catalogos eliminados");
           await catalogo.destroy();
         }
       }
+
       await scrapingFunction[company.name]();
       res.status(200).json({ message: "Catálogos actualizados con éxito!" });
     } catch (error) {
       res.status(400).json({ message: error.message });
+    } finally {
+      releaseScrapingLock(companyKey);
     }
   },
 

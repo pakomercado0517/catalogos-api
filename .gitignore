@@ -16,6 +16,9 @@ bin-release/
 *.ipa
 *.apk
 
+#docs
+docs/
+
 #pdf-catalogos
 pdf-catalogues/
 
