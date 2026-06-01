@@ -1,13 +1,18 @@
 //@ts-ignore
 const { Company, Catalogo } = require("../db");
 const { companyMap } = require("../DbData/companies");
-// const { concordDb, betterwareDb } = require("../DbData/catalogos");
 const scrapingFunction = require("../puppeteer/");
 const {
-  tryAcquireScrapingLock,
-  releaseScrapingLock,
-  recordCompanyScrapeStart,
-} = require("../middleware/scrapingLimits");
+  enqueueScrapingJob,
+  getJob,
+  getLatestJobForCompany,
+} = require("../jobs/scrapingQueue");
+const { logRejectedAccess } = require("../utils/logger");
+const {
+  parsePagination,
+  buildPaginationResponse,
+} = require("../utils/pagination");
+const { getCacheKey, get, set } = require("../utils/readCache");
 
 module.exports = {
   createCompanies: async () => {
@@ -23,8 +28,29 @@ module.exports = {
   },
   getAllCompanies: async (req, res) => {
     try {
-      const company = await Company.findAll({});
-      res.status(200).json(company);
+      const { limit, offset } = parsePagination(req.query);
+      const cacheKey = getCacheKey(["companies", "all", limit, offset]);
+      const cached = get(cacheKey);
+
+      if (cached) {
+        return res.status(200).json(cached);
+      }
+
+      const { rows, count } = await Company.findAndCountAll({
+        limit,
+        offset,
+        order: [["id", "ASC"]],
+      });
+
+      const payload = buildPaginationResponse({
+        rows,
+        count,
+        limit,
+        offset,
+      });
+
+      set(cacheKey, payload);
+      res.status(200).json(payload);
     } catch (error) {
       res.status(400).send(error);
     }
@@ -32,40 +58,66 @@ module.exports = {
 
   getAllCatalogos: async (req, res) => {
     try {
-      const catalogo = await Catalogo.findAll({});
-      res.status(200).json(catalogo);
+      const { limit, offset } = parsePagination(req.query);
+      const cacheKey = getCacheKey(["catalogos", "all", limit, offset]);
+      const cached = get(cacheKey);
+
+      if (cached) {
+        return res.status(200).json(cached);
+      }
+
+      const { rows, count } = await Catalogo.findAndCountAll({
+        limit,
+        offset,
+        order: [["id", "ASC"]],
+      });
+
+      const payload = buildPaginationResponse({
+        rows,
+        count,
+        limit,
+        offset,
+      });
+
+      set(cacheKey, payload);
+      res.status(200).json(payload);
     } catch (error) {
       res.status(400).send(error);
     }
   },
-  getCatalogosById: async (req, res, next) => {
+  getCatalogosById: async (req, res) => {
     const { id } = req.params;
-    try {
-      const company = await Company.findOne({ where: { id } });
 
-      const catalogues = await Company.findAll({
+    try {
+      const cacheKey = getCacheKey(["catalogos", "company", id]);
+      const cached = get(cacheKey);
+
+      if (cached) {
+        return res.status(200).json(cached);
+      }
+
+      const company = await Company.findOne({
         where: { id },
         include: [{ model: Catalogo }],
       });
-      res.status(200).json(catalogues[0].catalogos);
+
+      if (!company) {
+        return res.status(404).json({ message: "Empresa no encontrada" });
+      }
+
+      const catalogos = company.catalogos || [];
+      set(cacheKey, catalogos);
+      res.status(200).json(catalogos);
     } catch (error) {
-      res.status(400).json(error.message);
+      res.status(400).json({ message: error.message });
     }
   },
-  updateCatalogues: async (req, res, next) => {
+  updateCatalogues: async (req, res) => {
     const { id } = req.params;
-    const companyKey = String(id);
-
-    if (!tryAcquireScrapingLock(companyKey)) {
-      return res.status(429).json({
-        message: "Ya hay una actualizacion en curso para esta empresa.",
-      });
-    }
 
     try {
       const company = await Company.findOne({
         where: { id },
-        include: { model: Catalogo },
       });
 
       if (!company) {
@@ -78,29 +130,71 @@ module.exports = {
         });
       }
 
-      recordCompanyScrapeStart(companyKey);
+      const result = enqueueScrapingJob({
+        companyId: company.id,
+        companyName: company.name,
+        source: "manual",
+      });
 
-      console.log(company.name);
-      if (company.catalogos.length > 0) {
-        for (const catalogo of company.catalogos) {
-          console.log("catalogos eliminados");
-          await catalogo.destroy();
-        }
+      if (result.conflict) {
+        logRejectedAccess({
+          status: 429,
+          reason: "job_already_active",
+          req,
+          companyId: String(id),
+        });
+        return res.status(429).json({
+          message:
+            "Ya hay una actualizacion en curso o en cola para esta empresa.",
+          job: result.job,
+        });
       }
 
-      await scrapingFunction[company.name]();
-      res.status(200).json({ message: "Catálogos actualizados con éxito!" });
+      return res.status(202).json({
+        message:
+          "Actualizacion encolada. El scraping se ejecutara en segundo plano.",
+        job: result.job,
+        statusUrl: `/catalogos/jobs/${result.job.jobId}`,
+      });
     } catch (error) {
-      res.status(400).json({ message: error.message });
-    } finally {
-      releaseScrapingLock(companyKey);
+      return res.status(400).json({ message: error.message });
     }
+  },
+
+  getUpdateCataloguesStatus: async (req, res) => {
+    const { id } = req.params;
+    const job = getLatestJobForCompany(id);
+
+    if (!job) {
+      return res.status(404).json({
+        message:
+          "No hay trabajos de actualizacion registrados para esta empresa.",
+      });
+    }
+
+    return res.status(200).json({ job });
+  },
+
+  getScrapingJob: async (req, res) => {
+    const { jobId } = req.params;
+    const job = getJob(jobId);
+
+    if (!job) {
+      return res.status(404).json({ message: "Trabajo no encontrado" });
+    }
+
+    return res.status(200).json({ job });
   },
 
   getCompanyById: async (req, res) => {
     const { id } = req.params;
     try {
       const company = await Company.findOne({ where: { id } });
+
+      if (!company) {
+        return res.status(404).json({ message: "Empresa no encontrada" });
+      }
+
       res.status(200).json(company);
     } catch (error) {
       res.status(400).json(error.message);

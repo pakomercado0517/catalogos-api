@@ -1,3 +1,5 @@
+const { logRejectedAccess } = require("../utils/logger");
+
 function getProvidedKey(req) {
   const authorization = req.headers.authorization;
   if (authorization && authorization.startsWith("Bearer ")) {
@@ -17,6 +19,11 @@ function scrapingAuth(req, res, next) {
 
   if (!expectedKey) {
     console.error("SCRAPING_API_KEY no esta configurada");
+    logRejectedAccess({
+      status: 503,
+      reason: "missing_env_key",
+      req,
+    });
     return res.status(503).json({
       message: "Servicio de actualizacion no configurado",
     });
@@ -25,10 +32,20 @@ function scrapingAuth(req, res, next) {
   const providedKey = getProvidedKey(req);
 
   if (!providedKey) {
+    logRejectedAccess({
+      status: 401,
+      reason: "missing_credentials",
+      req,
+    });
     return res.status(401).json({ message: "Credencial requerida" });
   }
 
   if (providedKey !== expectedKey) {
+    logRejectedAccess({
+      status: 403,
+      reason: "invalid_credentials",
+      req,
+    });
     return res.status(403).json({ message: "Credencial invalida" });
   }
 

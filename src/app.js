@@ -12,10 +12,16 @@ const server = express();
 server.name = "API";
 server.set("trust proxy", 1);
 
-server.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
-server.use(bodyParser.json({ limit: "50mb" }));
+const REQUEST_BODY_LIMIT = process.env.REQUEST_BODY_LIMIT || "1mb";
+
+server.use(bodyParser.urlencoded({ extended: true, limit: REQUEST_BODY_LIMIT }));
+server.use(bodyParser.json({ limit: REQUEST_BODY_LIMIT }));
 server.use(cookieParser());
-server.use(morgan("dev"));
+
+const isProduction = process.env.NODE_ENV === "production";
+server.use(
+  morgan(isProduction ? ":method :url :status :response-time ms" : "dev")
+);
 server.use(
   cors({
     // origin: '*'
