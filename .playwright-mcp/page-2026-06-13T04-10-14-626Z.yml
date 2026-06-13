@@ -1,0 +1,197 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e5]:
+    - region "slider" [ref=e10]:
+      - generic [ref=e12]:
+        - group "La diapositiva actual es1 de2" [ref=e15]:
+          - paragraph [ref=e19]: Estrena sin esperar. Paga a MSI
+        - group [ref=e20]
+    - generic [ref=e25]:
+      - generic "Sección fila" [ref=e30]:
+        - generic [ref=e32]:
+          - paragraph [ref=e38]: COOKIES
+          - paragraph [ref=e44]: Te informamos que en nuestra página de Internet utilizamos cookies, para mayor información sobre las mismas favor de acceder al aviso de privacidad. Al continuar navegando, consideraremos que acepta su uso.
+          - button "Cerrar" [ref=e49]:
+            - generic [ref=e50]: Cerrar
+      - generic [ref=e55]:
+        - paragraph [ref=e58]: TU COMPRA ES 100% SEGURA
+        - generic "Sección fila" [ref=e59]:
+          - generic [ref=e61]:
+            - listitem [ref=e63]:
+              - link "Inicia tu negocio" [ref=e65] [cursor=pointer]:
+                - /url: /inicia-tu-negocio
+                - generic [ref=e66]: Inicia tu negocio
+            - listitem [ref=e68]:
+              - generic [ref=e71]: Estrellas
+            - listitem [ref=e73]:
+              - generic [ref=e76]: Ir A
+      - generic [ref=e81]:
+        - link "Andrea MX" [ref=e82] [cursor=pointer]:
+          - /url: /
+          - img "Andrea MX" [ref=e84]
+        - generic "Sección fila" [ref=e85]:
+          - generic [ref=e87]:
+            - combobox "¿Qué estás buscando hoy?" [ref=e90]:
+              - generic [ref=e91]: ¿Qué estás buscando hoy?
+              - generic [ref=e95]:
+                - textbox "¿Qué estás buscando hoy? Buscar Productos" [ref=e96]:
+                  - /placeholder: ¿Qué estás buscando hoy?
+                - button "Buscar Productos" [ref=e99]:
+                  - img [ref=e100]
+            - listitem [ref=e104]:
+              - link "Favoritos" [ref=e106] [cursor=pointer]:
+                - /url: /account#/wishlist
+                - generic [ref=e107]:
+                  - img [ref=e109]
+                  - text: Favoritos
+            - button [ref=e114]:
+              - img [ref=e119]
+            - complementary [ref=e122]:
+              - button [ref=e125]:
+                - img [ref=e128]
+      - navigation [ref=e135]:
+        - list [ref=e136]:
+          - listitem [ref=e137]:
+            - generic [ref=e140]: Zapatos
+          - listitem [ref=e141]:
+            - link "Mujer" [ref=e143] [cursor=pointer]:
+              - /url: /mujer
+              - generic [ref=e144]: Mujer
+          - listitem [ref=e145]:
+            - link "Hombre" [ref=e147] [cursor=pointer]:
+              - /url: /hombre
+              - generic [ref=e148]: Hombre
+          - listitem [ref=e149]:
+            - link "Niños" [ref=e151] [cursor=pointer]:
+              - /url: /ninos
+              - generic [ref=e152]: Niños
+          - listitem [ref=e153]:
+            - link "Home" [ref=e155] [cursor=pointer]:
+              - /url: /AndreaHome
+              - generic [ref=e156]: Home
+          - listitem [ref=e157]:
+            - link "Marcas" [ref=e159] [cursor=pointer]:
+              - /url: /coleccion-productos/Andrea-ferrato-sport
+              - generic [ref=e160]: Marcas
+          - listitem [ref=e161]:
+            - link "Outlet" [ref=e163] [cursor=pointer]:
+              - /url: /outlet
+              - generic [ref=e164]: Outlet
+          - listitem [ref=e165]:
+            - link "Catálogos" [ref=e167] [cursor=pointer]:
+              - /url: /catalogos
+              - generic [ref=e168]: Catálogos
+          - listitem [ref=e169]:
+            - link "FAN ZONE" [ref=e171] [cursor=pointer]:
+              - /url: /vive-mundial
+              - generic [ref=e172]: FAN ZONE
+    - generic [ref=e174]:
+      - generic:
+        - generic "Sección fila"
+      - generic "Sección fila" [ref=e176]:
+        - generic [ref=e181]:
+          - generic [ref=e185]:
+            - generic [ref=e187]:
+              - generic [ref=e189]: "- Seleccionar estado -"
+              - img [ref=e191]
+            - combobox "- Seleccionar estado -" [ref=e194]:
+              - option "- Seleccionar estado -" [disabled] [selected]
+              - option "Aguascalientes"
+              - option "Baja California"
+              - option "Baja California Sur"
+              - option "Campeche"
+              - option "Ciudad de México"
+              - option "Coahuila"
+              - option "Colima"
+              - option "Chiapas"
+              - option "Chihuahua"
+              - option "Durango"
+              - option "Guanajuato"
+              - option "Guerrero"
+              - option "Hidalgo"
+              - option "Jalisco"
+              - option "México"
+              - option "Michoacán"
+              - option "Morelos"
+              - option "Nayarit"
+              - option "Nuevo León"
+              - option "Oaxaca"
+              - option "Puebla"
+              - option "Querétaro"
+              - option "Quintana Roo"
+              - option "San Luis Potosí"
+              - option "Sinaloa"
+              - option "Sonora"
+              - option "Tabasco"
+              - option "Tamaulipas"
+              - option "Tlaxcala"
+              - option "Veracruz"
+              - option "Yucatán"
+              - option "Zacatecas"
+          - button "Ir" [ref=e196]:
+            - generic [ref=e197]: Ir
+  - generic:
+    - generic:
+      - generic:
+        - button:
+          - img
+        - text: Bolsa de compras
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - article:
+                  - paragraph [ref=e200]: Términos más buscados
+                  - list [ref=e201]:
+                    - listitem [ref=e202]:
+                      - link "1. botas" [ref=e203] [cursor=pointer]:
+                        - /url: /botas?map=ft&_q=botas
+                        - generic [ref=e204]: "1."
+                        - text: botas
+                    - listitem [ref=e205]:
+                      - link "2. sandalias" [ref=e206] [cursor=pointer]:
+                        - /url: /sandalias?map=ft&_q=sandalias
+                        - generic [ref=e207]: "2."
+                        - text: sandalias
+                    - listitem [ref=e208]:
+                      - link "3. tenis" [ref=e209] [cursor=pointer]:
+                        - /url: /tenis?map=ft&_q=tenis
+                        - generic [ref=e210]: "3."
+                        - text: tenis
+                    - listitem [ref=e211]:
+                      - link "4. zapatillas" [ref=e212] [cursor=pointer]:
+                        - /url: /zapatillas?map=ft&_q=zapatillas
+                        - generic [ref=e213]: "4."
+                        - text: zapatillas
+                    - listitem [ref=e214]:
+                      - link "5. plataforma" [ref=e215] [cursor=pointer]:
+                        - /url: /plataforma?map=ft&_q=plataforma
+                        - generic [ref=e216]: "5."
+                        - text: plataforma
+                    - listitem [ref=e217]:
+                      - link "6. tenis mujer" [ref=e218] [cursor=pointer]:
+                        - /url: /tenis%20mujer?map=ft&_q=tenis mujer
+                        - generic [ref=e219]: "6."
+                        - text: tenis mujer
+                    - listitem [ref=e220]:
+                      - link "7. flats" [ref=e221] [cursor=pointer]:
+                        - /url: /flats?map=ft&_q=flats
+                        - generic [ref=e222]: "7."
+                        - text: flats
+                    - listitem [ref=e223]:
+                      - link "8. botas mujer" [ref=e224] [cursor=pointer]:
+                        - /url: /botas%20mujer?map=ft&_q=botas mujer
+                        - generic [ref=e225]: "8."
+                        - text: botas mujer
+                    - listitem [ref=e226]:
+                      - link "9. botines" [ref=e227] [cursor=pointer]:
+                        - /url: /botines?map=ft&_q=botines
+                        - generic [ref=e228]: "9."
+                        - text: botines
+                    - listitem [ref=e229]:
+                      - link "10. sneakers" [ref=e230] [cursor=pointer]:
+                        - /url: /sneakers?map=ft&_q=sneakers
+                        - generic [ref=e231]: "10."
+                        - text: sneakers

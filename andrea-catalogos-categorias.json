@@ -1,0 +1,332 @@
+[
+  {
+    "name": "CALZADO DAMA",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/263-1-1-1-30/Imagen/attachments/263-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/263",
+    "category": "calzado"
+  },
+  {
+    "name": "LISTOS PARA GANAR",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/193-1-1-1-30/Imagen/attachments/193-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/193",
+    "category": "otros"
+  },
+  {
+    "name": "OUTLET",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/364-1-1-1-30/Imagen/attachments/364-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/364",
+    "category": "outlet"
+  },
+  {
+    "name": "CALZADO CONFORT",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/89-1-1-1-30/Imagen/attachments/89-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/89",
+    "category": "calzado"
+  },
+  {
+    "name": "ANDREA VESTIR",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/241-1-1-1-30/Imagen/attachments/241-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/241",
+    "category": "ropa"
+  },
+  {
+    "name": "ANDREA BEAUTY",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/16-1-1-1-30/Imagen/attachments/16-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/16",
+    "category": "belleza"
+  },
+  {
+    "name": "ANDREA HOME",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/446-1-1-1-30/Imagen/attachments/446-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/446",
+    "category": "hogar"
+  },
+  {
+    "name": "LENCERÍA & VESTIR INTERIOR",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/14-1-1-1-30/Imagen/attachments/14-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/14",
+    "category": "ropa"
+  },
+  {
+    "name": "CALZADO CABALLERO",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/5-1-1-1-30/Imagen/attachments/5-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/5",
+    "category": "calzado"
+  },
+  {
+    "name": "VESTIR CABALLERO",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/36-1-1-1-30/Imagen/attachments/36-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/36",
+    "category": "ropa"
+  },
+  {
+    "name": "INFANTIL",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/242-1-1-1-30/Imagen/attachments/242-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/242",
+    "category": "infantil"
+  },
+  {
+    "name": "INFANTIL BABY",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/434-1-1-1-30/Imagen/attachments/434-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/434",
+    "category": "infantil"
+  },
+  {
+    "name": "ACCESORIOS PARA TODOS",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/633-1-1-1-30/Imagen/attachments/633-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/633",
+    "category": "accesorios"
+  },
+  {
+    "name": "PARA LAS FIESTAS",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/76-1-1-1-30/Imagen/attachments/76-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/76",
+    "category": "ropa"
+  },
+  {
+    "name": "BOTAS DE LLUVIA",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/310-1-1-1-30/Imagen/attachments/310-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/310",
+    "category": "calzado"
+  },
+  {
+    "name": "LO MÁS DIVERTIDO EN ROPA",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/553-1-1-1-30/Imagen/attachments/553-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/553",
+    "category": "ropa"
+  },
+  {
+    "name": "FORASTERO",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/11-1-1-1-30/Imagen/attachments/11-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/11",
+    "category": "otros"
+  },
+  {
+    "name": "PROFESIONAL E INDUSTRIAL",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/307-1-1-1-30/Imagen/attachments/307-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/307",
+    "category": "otros"
+  },
+  {
+    "name": "EXCLUSIVOS DE ANDREA",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/643-1-1-1-30/Imagen/attachments/643-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/643",
+    "category": "otros"
+  },
+  {
+    "name": "BÁSICOS EN TENDENCIA",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/259-1-1-1-30/Imagen/attachments/259-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/259",
+    "category": "ropa"
+  },
+  {
+    "name": "TU HOGAR ESTA PRIMAVERA",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/621-1-1-1-30/Imagen/attachments/621-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/621",
+    "category": "hogar"
+  },
+  {
+    "name": "COLEGIAL",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/395-1-1-1-30/Imagen/attachments/395-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/395",
+    "category": "infantil"
+  },
+  {
+    "name": "PARA PAPÁ",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/453-1-1-1-30/Imagen/attachments/453-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/453",
+    "category": "ropa"
+  },
+  {
+    "name": "ANDREA PETS",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/375-1-1-1-30/Imagen/attachments/375-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/375",
+    "category": "hogar"
+  },
+  {
+    "name": "DEPORTIVO COMPLETO",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/337-1-1-1-30/Imagen/attachments/337-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/337",
+    "category": "deportivo"
+  },
+  {
+    "name": "ANDREA SPORT",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/410-1-1-1-30/Imagen/attachments/410-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/410",
+    "category": "deportivo"
+  },
+  {
+    "name": "FERRATO SPORT",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/411-1-1-1-30/Imagen/attachments/411-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/411",
+    "category": "deportivo"
+  },
+  {
+    "name": "DR. SCHOLLS",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/42-1-1-1-30/Imagen/attachments/42-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/42",
+    "category": "otros"
+  },
+  {
+    "name": "URBANO DEPORTIVO",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/407-1-1-1-30/Imagen/attachments/407-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/407",
+    "category": "deportivo"
+  },
+  {
+    "name": "DEPORTIVO INFANTIL",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/412-1-1-1-30/Imagen/attachments/412-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/412",
+    "category": "deportivo"
+  },
+  {
+    "name": "LACOSTE",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/602-1-1-1-30/Imagen/attachments/602-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/602",
+    "category": "deportivo"
+  },
+  {
+    "name": "ADIDAS",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/59-1-1-1-30/Imagen/attachments/59-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/59",
+    "category": "deportivo"
+  },
+  {
+    "name": "NIKE",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/60-1-1-1-30/Imagen/attachments/60-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/60",
+    "category": "deportivo"
+  },
+  {
+    "name": "PUMA",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/63-1-1-1-30/Imagen/attachments/63-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/63",
+    "category": "deportivo"
+  },
+  {
+    "name": "REEBOK",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/62-1-1-1-30/Imagen/attachments/62-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/62",
+    "category": "deportivo"
+  },
+  {
+    "name": "FILA",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/551-1-1-1-30/Imagen/attachments/551-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/551",
+    "category": "deportivo"
+  },
+  {
+    "name": "VANS",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/336-1-1-1-30/Imagen/attachments/336-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/336",
+    "category": "deportivo"
+  },
+  {
+    "name": "PANAM",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/287-1-1-1-30/Imagen/attachments/287-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/287",
+    "category": "deportivo"
+  },
+  {
+    "name": "BASKETBALL",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/636-1-1-1-30/Imagen/attachments/636-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/636",
+    "category": "deportivo"
+  },
+  {
+    "name": "DEPORTIVO FÚTBOL",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/536-1-1-1-30/Imagen/attachments/536-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/536",
+    "category": "deportivo"
+  },
+  {
+    "name": "AEROPOSTALE",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/334-1-1-1-30/Imagen/attachments/334-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/334",
+    "category": "otros"
+  },
+  {
+    "name": "CHAMPION",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/262-1-1-1-30/Imagen/attachments/262-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/262",
+    "category": "deportivo"
+  },
+  {
+    "name": "K-SWISS",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/245-1-1-1-30/Imagen/attachments/245-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/245",
+    "category": "deportivo"
+  },
+  {
+    "name": "GOTCHA",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/478-1-1-1-30/Imagen/attachments/478-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/478",
+    "category": "otros"
+  },
+  {
+    "name": "UNDER ARMOUR",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/289-1-1-1-30/Imagen/attachments/289-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/289",
+    "category": "deportivo"
+  },
+  {
+    "name": "SKECHERS",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/249-1-1-1-30/Imagen/attachments/249-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/249",
+    "category": "deportivo"
+  },
+  {
+    "name": "PIRMA",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/247-1-1-1-30/Imagen/attachments/247-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/247",
+    "category": "deportivo"
+  },
+  {
+    "name": "WILSON",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/255-1-1-1-30/Imagen/attachments/255-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/255",
+    "category": "deportivo"
+  },
+  {
+    "name": "POLO CLUB",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/435-1-1-1-30/Imagen/attachments/435-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/435",
+    "category": "otros"
+  },
+  {
+    "name": "HURLEY",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/626-1-1-1-30/Imagen/attachments/626-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/626",
+    "category": "otros"
+  },
+  {
+    "name": "LAMBORGHINI",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/444-1-1-1-30/Imagen/attachments/444-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/444",
+    "category": "otros"
+  },
+  {
+    "name": "ACCESORIOS DEPORTIVO",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/217-1-1-1-30/Imagen/attachments/217-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/217",
+    "category": "deportivo"
+  },
+  {
+    "name": "PARA LA AVENTURA",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/419-1-1-1-30/Imagen/attachments/419-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/419",
+    "category": "otros"
+  },
+  {
+    "name": "AFTER SPORT",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/392-1-1-1-30/Imagen/attachments/392-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/392",
+    "category": "deportivo"
+  },
+  {
+    "name": "ZONA DESCUENTOS",
+    "image": "http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/294-1-1-1-30/Imagen/attachments/294-1-1-1-30.JPG",
+    "url": "https://cdn-img.andrea.com/MX/1/294",
+    "category": "outlet"
+  }
+]

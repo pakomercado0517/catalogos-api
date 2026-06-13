@@ -13,7 +13,8 @@ function catalogPayloadChanged(existing, payload) {
   return (
     existing.name !== payload.name ||
     existing.image !== payload.image ||
-    existing.url !== payload.url
+    existing.url !== payload.url ||
+    existing.category !== payload.category
   );
 }
 
@@ -55,6 +56,7 @@ async function syncCatalogosForCompany(company, items) {
       name: item.name,
       image: item.image,
       url: normalizedUrl,
+      category: item.category,
       companyId,
     };
 
@@ -71,6 +73,7 @@ async function syncCatalogosForCompany(company, items) {
         name: payload.name,
         image: payload.image,
         url: payload.url,
+        category: payload.category,
       });
       updated += 1;
     } else {

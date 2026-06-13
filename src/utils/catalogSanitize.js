@@ -38,11 +38,27 @@ function normalizeImageUrl(url) {
   return normalized || null;
 }
 
+function normalizeCatalogCategory(category) {
+  if (!category || typeof category !== "string") {
+    return "otros";
+  }
+
+  const cleaned = category
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/\s+/g, " ")
+    .trim();
+
+  return cleaned || "otros";
+}
+
 function sanitizeCatalogItem(item = {}) {
   return {
     name: normalizeCatalogName(item.name),
     url: normalizeCatalogUrl(item.url),
     image: normalizeImageUrl(item.image),
+    category: normalizeCatalogCategory(item.category),
   };
 }
 
@@ -50,5 +66,6 @@ module.exports = {
   normalizeCatalogUrl,
   normalizeCatalogName,
   normalizeImageUrl,
+  normalizeCatalogCategory,
   sanitizeCatalogItem,
 };

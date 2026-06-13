@@ -20,7 +20,9 @@ router.get(
   requestFunctions.getUpdateCataloguesStatus
 );
 
-router.get("/jobs/:jobId", scrapingAuth, requestFunctions.getScrapingJob);
+router.get("/jobs/:jobId", scrapingAuth, requestFunctions.getScrapingJob);
+
+router.get("/categories", requestFunctions.getCatalogCategories);
 
 router.get("/updateCatalogues/:id", (req, res) => {
   logRejectedAccess({

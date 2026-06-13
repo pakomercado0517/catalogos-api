@@ -1,0 +1,476 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e5]:
+    - region "slider" [ref=e10]:
+      - generic [ref=e12]:
+        - group "La diapositiva actual es1 de2" [ref=e15]:
+          - paragraph [ref=e19]: Estrena sin esperar. Paga a MSI
+        - group [ref=e20]
+    - generic [ref=e25]:
+      - generic "Sección fila" [ref=e30]:
+        - generic [ref=e32]:
+          - paragraph [ref=e38]: COOKIES
+          - paragraph [ref=e44]: Te informamos que en nuestra página de Internet utilizamos cookies, para mayor información sobre las mismas favor de acceder al aviso de privacidad. Al continuar navegando, consideraremos que acepta su uso.
+          - button "Cerrar" [ref=e49]:
+            - generic [ref=e50]: Cerrar
+      - generic [ref=e55]:
+        - paragraph [ref=e58]: TU COMPRA ES 100% SEGURA
+        - generic "Sección fila" [ref=e59]:
+          - generic [ref=e61]:
+            - listitem [ref=e63]:
+              - link "Inicia tu negocio" [ref=e65] [cursor=pointer]:
+                - /url: /inicia-tu-negocio
+                - generic [ref=e66]: Inicia tu negocio
+            - listitem [ref=e68]:
+              - generic [ref=e71]: Estrellas
+            - listitem [ref=e73]:
+              - generic [ref=e76]: Ir A
+      - generic [ref=e81]:
+        - link "Andrea MX" [ref=e82] [cursor=pointer]:
+          - /url: /
+          - img "Andrea MX" [ref=e84]
+        - generic "Sección fila" [ref=e85]:
+          - generic [ref=e87]:
+            - combobox "¿Qué estás buscando hoy?" [ref=e90]:
+              - generic [ref=e91]: ¿Qué estás buscando hoy?
+              - generic [ref=e95]:
+                - textbox "¿Qué estás buscando hoy? Buscar Productos" [ref=e96]:
+                  - /placeholder: ¿Qué estás buscando hoy?
+                - button "Buscar Productos" [ref=e99]:
+                  - img [ref=e100]
+            - listitem [ref=e104]:
+              - link "Favoritos" [ref=e106] [cursor=pointer]:
+                - /url: /account#/wishlist
+                - generic [ref=e107]:
+                  - img [ref=e109]
+                  - text: Favoritos
+            - button [ref=e114]:
+              - img [ref=e119]
+            - complementary [ref=e122]:
+              - button [ref=e125]:
+                - img [ref=e128]
+      - navigation [ref=e135]:
+        - list [ref=e136]:
+          - listitem [ref=e137]:
+            - generic [ref=e140]: Zapatos
+          - listitem [ref=e141]:
+            - link "Mujer" [ref=e143] [cursor=pointer]:
+              - /url: /mujer
+              - generic [ref=e144]: Mujer
+          - listitem [ref=e145]:
+            - link "Hombre" [ref=e147] [cursor=pointer]:
+              - /url: /hombre
+              - generic [ref=e148]: Hombre
+          - listitem [ref=e149]:
+            - link "Niños" [ref=e151] [cursor=pointer]:
+              - /url: /ninos
+              - generic [ref=e152]: Niños
+          - listitem [ref=e153]:
+            - link "Home" [ref=e155] [cursor=pointer]:
+              - /url: /AndreaHome
+              - generic [ref=e156]: Home
+          - listitem [ref=e157]:
+            - link "Marcas" [ref=e159] [cursor=pointer]:
+              - /url: /coleccion-productos/Andrea-ferrato-sport
+              - generic [ref=e160]: Marcas
+          - listitem [ref=e161]:
+            - link "Outlet" [ref=e163] [cursor=pointer]:
+              - /url: /outlet
+              - generic [ref=e164]: Outlet
+          - listitem [ref=e165]:
+            - link "Catálogos" [ref=e167] [cursor=pointer]:
+              - /url: /catalogos
+              - generic [ref=e168]: Catálogos
+          - listitem [ref=e169]:
+            - link "FAN ZONE" [ref=e171] [cursor=pointer]:
+              - /url: /vive-mundial
+              - generic [ref=e172]: FAN ZONE
+    - generic [ref=e174]:
+      - generic:
+        - generic "Sección fila"
+      - generic:
+        - generic "Sección fila":
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - region "slider"
+      - generic "Sección fila" [ref=e176]:
+        - generic [ref=e181]:
+          - heading "Catálogos" [level=1] [ref=e182]
+          - generic [ref=e183]:
+            - text: Veracruz
+            - button "Cambiar" [ref=e185]:
+              - generic [ref=e186]: Cambiar
+            - text: Los precios de nuestros productos pueden variar de acuerdo a tu ubicación
+          - list [ref=e187]:
+            - listitem [ref=e188]:
+              - link "CALZADO DAMA CALZADO DAMA" [ref=e189] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/263
+                - img "CALZADO DAMA" [ref=e190]
+                - paragraph [ref=e191]: CALZADO DAMA
+            - listitem [ref=e192]:
+              - link "LISTOS PARA GANAR LISTOS PARA GANAR" [ref=e193] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/193
+                - img "LISTOS PARA GANAR" [ref=e194]
+                - paragraph [ref=e195]: LISTOS PARA GANAR
+            - listitem [ref=e196]:
+              - link "OUTLET OUTLET" [ref=e197] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/364
+                - img "OUTLET" [ref=e198]
+                - paragraph [ref=e199]: OUTLET
+            - listitem [ref=e200]:
+              - link "CALZADO CONFORT CALZADO CONFORT" [ref=e201] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/89
+                - img "CALZADO CONFORT" [ref=e202]
+                - paragraph [ref=e203]: CALZADO CONFORT
+            - listitem [ref=e204]:
+              - link "ANDREA VESTIR ANDREA VESTIR" [ref=e205] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/241
+                - img "ANDREA VESTIR" [ref=e206]
+                - paragraph [ref=e207]: ANDREA VESTIR
+            - listitem [ref=e208]:
+              - link "ANDREA BEAUTY ANDREA BEAUTY" [ref=e209] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/16
+                - img "ANDREA BEAUTY" [ref=e210]
+                - paragraph [ref=e211]: ANDREA BEAUTY
+            - listitem [ref=e212]:
+              - link "ANDREA HOME ANDREA HOME" [ref=e213] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/446
+                - img "ANDREA HOME" [ref=e214]
+                - paragraph [ref=e215]: ANDREA HOME
+            - listitem [ref=e216]:
+              - link "LENCERÍA & VESTIR INTERIOR LENCERÍA & VESTIR INTERIOR" [ref=e217] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/14
+                - img "LENCERÍA & VESTIR INTERIOR" [ref=e218]
+                - paragraph [ref=e219]: LENCERÍA & VESTIR INTERIOR
+            - listitem [ref=e220]:
+              - link "CALZADO CABALLERO CALZADO CABALLERO" [ref=e221] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/5
+                - img "CALZADO CABALLERO" [ref=e222]
+                - paragraph [ref=e223]: CALZADO CABALLERO
+            - listitem [ref=e224]:
+              - link "VESTIR CABALLERO VESTIR CABALLERO" [ref=e225] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/36
+                - img "VESTIR CABALLERO" [ref=e226]
+                - paragraph [ref=e227]: VESTIR CABALLERO
+            - listitem [ref=e228]:
+              - link "INFANTIL INFANTIL" [ref=e229] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/242
+                - img "INFANTIL" [ref=e230]
+                - paragraph [ref=e231]: INFANTIL
+            - listitem [ref=e232]:
+              - link "INFANTIL BABY INFANTIL BABY" [ref=e233] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/434
+                - img "INFANTIL BABY" [ref=e234]
+                - paragraph [ref=e235]: INFANTIL BABY
+            - listitem [ref=e236]:
+              - link "ACCESORIOS PARA TODOS ACCESORIOS PARA TODOS" [ref=e237] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/633
+                - img "ACCESORIOS PARA TODOS" [ref=e238]
+                - paragraph [ref=e239]: ACCESORIOS PARA TODOS
+            - listitem [ref=e240]:
+              - link "PARA LAS FIESTAS PARA LAS FIESTAS" [ref=e241] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/76
+                - img "PARA LAS FIESTAS" [ref=e242]
+                - paragraph [ref=e243]: PARA LAS FIESTAS
+            - listitem [ref=e244]:
+              - link "BOTAS DE LLUVIA BOTAS DE LLUVIA" [ref=e245] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/310
+                - img "BOTAS DE LLUVIA" [ref=e246]
+                - paragraph [ref=e247]: BOTAS DE LLUVIA
+            - listitem [ref=e248]:
+              - link "LO MÁS DIVERTIDO EN ROPA LO MÁS DIVERTIDO EN ROPA" [ref=e249] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/553
+                - img "LO MÁS DIVERTIDO EN ROPA" [ref=e250]
+                - paragraph [ref=e251]: LO MÁS DIVERTIDO EN ROPA
+            - listitem [ref=e252]:
+              - link "FORASTERO FORASTERO" [ref=e253] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/11
+                - img "FORASTERO" [ref=e254]
+                - paragraph [ref=e255]: FORASTERO
+            - listitem [ref=e256]:
+              - link "PROFESIONAL E INDUSTRIAL PROFESIONAL E INDUSTRIAL" [ref=e257] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/307
+                - img "PROFESIONAL E INDUSTRIAL" [ref=e258]
+                - paragraph [ref=e259]: PROFESIONAL E INDUSTRIAL
+            - listitem [ref=e260]:
+              - link "EXCLUSIVOS DE ANDREA EXCLUSIVOS DE ANDREA" [ref=e261] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/643
+                - img "EXCLUSIVOS DE ANDREA" [ref=e262]
+                - paragraph [ref=e263]: EXCLUSIVOS DE ANDREA
+            - listitem [ref=e264]:
+              - link "BÁSICOS EN TENDENCIA BÁSICOS EN TENDENCIA" [ref=e265] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/259
+                - img "BÁSICOS EN TENDENCIA" [ref=e266]
+                - paragraph [ref=e267]: BÁSICOS EN TENDENCIA
+            - listitem [ref=e268]:
+              - link "TU HOGAR ESTA PRIMAVERA TU HOGAR ESTA PRIMAVERA" [ref=e269] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/621
+                - img "TU HOGAR ESTA PRIMAVERA" [ref=e270]
+                - paragraph [ref=e271]: TU HOGAR ESTA PRIMAVERA
+            - listitem [ref=e272]:
+              - link "COLEGIAL COLEGIAL" [ref=e273] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/395
+                - img "COLEGIAL" [ref=e274]
+                - paragraph [ref=e275]: COLEGIAL
+            - listitem [ref=e276]:
+              - link "PARA PAPÁ PARA PAPÁ" [ref=e277] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/453
+                - img "PARA PAPÁ" [ref=e278]
+                - paragraph [ref=e279]: PARA PAPÁ
+            - listitem [ref=e280]:
+              - link "ANDREA PETS ANDREA PETS" [ref=e281] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/375
+                - img "ANDREA PETS" [ref=e282]
+                - paragraph [ref=e283]: ANDREA PETS
+            - listitem [ref=e284]:
+              - link "DEPORTIVO COMPLETO DEPORTIVO COMPLETO" [ref=e285] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/337
+                - img "DEPORTIVO COMPLETO" [ref=e286]
+                - paragraph [ref=e287]: DEPORTIVO COMPLETO
+            - listitem [ref=e288]:
+              - link "ANDREA SPORT ANDREA SPORT" [ref=e289] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/410
+                - img "ANDREA SPORT" [ref=e290]
+                - paragraph [ref=e291]: ANDREA SPORT
+            - listitem [ref=e292]:
+              - link "FERRATO SPORT FERRATO SPORT" [ref=e293] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/411
+                - img "FERRATO SPORT" [ref=e294]
+                - paragraph [ref=e295]: FERRATO SPORT
+            - listitem [ref=e296]:
+              - link "DR. SCHOLLS DR. SCHOLLS" [ref=e297] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/42
+                - img "DR. SCHOLLS" [ref=e298]
+                - paragraph [ref=e299]: DR. SCHOLLS
+            - listitem [ref=e300]:
+              - link "URBANO DEPORTIVO URBANO DEPORTIVO" [ref=e301] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/407
+                - img "URBANO DEPORTIVO" [ref=e302]
+                - paragraph [ref=e303]: URBANO DEPORTIVO
+            - listitem [ref=e304]:
+              - link "DEPORTIVO INFANTIL DEPORTIVO INFANTIL" [ref=e305] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/412
+                - img "DEPORTIVO INFANTIL" [ref=e306]
+                - paragraph [ref=e307]: DEPORTIVO INFANTIL
+            - listitem [ref=e308]:
+              - link "LACOSTE LACOSTE" [ref=e309] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/602
+                - img "LACOSTE" [ref=e310]
+                - paragraph [ref=e311]: LACOSTE
+            - listitem [ref=e312]:
+              - link "ADIDAS ADIDAS" [ref=e313] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/59
+                - img "ADIDAS" [ref=e314]
+                - paragraph [ref=e315]: ADIDAS
+            - listitem [ref=e316]:
+              - link "NIKE NIKE" [ref=e317] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/60
+                - img "NIKE" [ref=e318]
+                - paragraph [ref=e319]: NIKE
+            - listitem [ref=e320]:
+              - link "PUMA PUMA" [ref=e321] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/63
+                - img "PUMA" [ref=e322]
+                - paragraph [ref=e323]: PUMA
+            - listitem [ref=e324]:
+              - link "REEBOK REEBOK" [ref=e325] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/62
+                - img "REEBOK" [ref=e326]
+                - paragraph [ref=e327]: REEBOK
+            - listitem [ref=e328]:
+              - link "FILA FILA" [ref=e329] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/551
+                - img "FILA" [ref=e330]
+                - paragraph [ref=e331]: FILA
+            - listitem [ref=e332]:
+              - link "VANS VANS" [ref=e333] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/336
+                - img "VANS" [ref=e334]
+                - paragraph [ref=e335]: VANS
+            - listitem [ref=e336]:
+              - link "PANAM PANAM" [ref=e337] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/287
+                - img "PANAM" [ref=e338]
+                - paragraph [ref=e339]: PANAM
+            - listitem [ref=e340]:
+              - link "BASKETBALL BASKETBALL" [ref=e341] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/636
+                - img "BASKETBALL" [ref=e342]
+                - paragraph [ref=e343]: BASKETBALL
+            - listitem [ref=e344]:
+              - link "DEPORTIVO FÚTBOL DEPORTIVO FÚTBOL" [ref=e345] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/536
+                - img "DEPORTIVO FÚTBOL" [ref=e346]
+                - paragraph [ref=e347]: DEPORTIVO FÚTBOL
+            - listitem [ref=e348]:
+              - link "AEROPOSTALE AEROPOSTALE" [ref=e349] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/334
+                - img "AEROPOSTALE" [ref=e350]
+                - paragraph [ref=e351]: AEROPOSTALE
+            - listitem [ref=e352]:
+              - link "CHAMPION CHAMPION" [ref=e353] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/262
+                - img "CHAMPION" [ref=e354]
+                - paragraph [ref=e355]: CHAMPION
+            - listitem [ref=e356]:
+              - link "K-SWISS K-SWISS" [ref=e357] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/245
+                - img "K-SWISS" [ref=e358]
+                - paragraph [ref=e359]: K-SWISS
+            - listitem [ref=e360]:
+              - link "GOTCHA GOTCHA" [ref=e361] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/478
+                - img "GOTCHA" [ref=e362]
+                - paragraph [ref=e363]: GOTCHA
+            - listitem [ref=e364]:
+              - link "UNDER ARMOUR UNDER ARMOUR" [ref=e365] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/289
+                - img "UNDER ARMOUR" [ref=e366]
+                - paragraph [ref=e367]: UNDER ARMOUR
+            - listitem [ref=e368]:
+              - link "SKECHERS SKECHERS" [ref=e369] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/249
+                - img "SKECHERS" [ref=e370]
+                - paragraph [ref=e371]: SKECHERS
+            - listitem [ref=e372]:
+              - link "PIRMA PIRMA" [ref=e373] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/247
+                - img "PIRMA" [ref=e374]
+                - paragraph [ref=e375]: PIRMA
+            - listitem [ref=e376]:
+              - link "WILSON WILSON" [ref=e377] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/255
+                - img "WILSON" [ref=e378]
+                - paragraph [ref=e379]: WILSON
+            - listitem [ref=e380]:
+              - link "POLO CLUB POLO CLUB" [ref=e381] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/435
+                - img "POLO CLUB" [ref=e382]
+                - paragraph [ref=e383]: POLO CLUB
+            - listitem [ref=e384]:
+              - link "HURLEY HURLEY" [ref=e385] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/626
+                - img "HURLEY" [ref=e386]
+                - paragraph [ref=e387]: HURLEY
+            - listitem [ref=e388]:
+              - link "LAMBORGHINI LAMBORGHINI" [ref=e389] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/444
+                - img "LAMBORGHINI" [ref=e390]
+                - paragraph [ref=e391]: LAMBORGHINI
+            - listitem [ref=e392]:
+              - link "ACCESORIOS DEPORTIVO ACCESORIOS DEPORTIVO" [ref=e393] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/217
+                - img "ACCESORIOS DEPORTIVO" [ref=e394]
+                - paragraph [ref=e395]: ACCESORIOS DEPORTIVO
+            - listitem [ref=e396]:
+              - link "PARA LA AVENTURA PARA LA AVENTURA" [ref=e397] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/419
+                - img "PARA LA AVENTURA" [ref=e398]
+                - paragraph [ref=e399]: PARA LA AVENTURA
+            - listitem [ref=e400]:
+              - link "AFTER SPORT AFTER SPORT" [ref=e401] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/392
+                - img "AFTER SPORT" [ref=e402]
+                - paragraph [ref=e403]: AFTER SPORT
+            - listitem [ref=e404]:
+              - link "ZONA DESCUENTOS ZONA DESCUENTOS" [ref=e405] [cursor=pointer]:
+                - /url: https://cdn-img.andrea.com/MX/1/294
+                - img "ZONA DESCUENTOS" [ref=e406]
+                - paragraph [ref=e407]: ZONA DESCUENTOS
+  - generic:
+    - generic:
+      - generic:
+        - button:
+          - img
+        - text: Bolsa de compras
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - article:
+                  - paragraph [ref=e410]: Términos más buscados
+                  - list [ref=e411]:
+                    - listitem [ref=e412]:
+                      - link "1. botas" [ref=e413] [cursor=pointer]:
+                        - /url: /botas?map=ft&_q=botas
+                        - generic [ref=e414]: "1."
+                        - text: botas
+                    - listitem [ref=e415]:
+                      - link "2. sandalias" [ref=e416] [cursor=pointer]:
+                        - /url: /sandalias?map=ft&_q=sandalias
+                        - generic [ref=e417]: "2."
+                        - text: sandalias
+                    - listitem [ref=e418]:
+                      - link "3. tenis" [ref=e419] [cursor=pointer]:
+                        - /url: /tenis?map=ft&_q=tenis
+                        - generic [ref=e420]: "3."
+                        - text: tenis
+                    - listitem [ref=e421]:
+                      - link "4. zapatillas" [ref=e422] [cursor=pointer]:
+                        - /url: /zapatillas?map=ft&_q=zapatillas
+                        - generic [ref=e423]: "4."
+                        - text: zapatillas
+                    - listitem [ref=e424]:
+                      - link "5. plataforma" [ref=e425] [cursor=pointer]:
+                        - /url: /plataforma?map=ft&_q=plataforma
+                        - generic [ref=e426]: "5."
+                        - text: plataforma
+                    - listitem [ref=e427]:
+                      - link "6. tenis mujer" [ref=e428] [cursor=pointer]:
+                        - /url: /tenis%20mujer?map=ft&_q=tenis mujer
+                        - generic [ref=e429]: "6."
+                        - text: tenis mujer
+                    - listitem [ref=e430]:
+                      - link "7. flats" [ref=e431] [cursor=pointer]:
+                        - /url: /flats?map=ft&_q=flats
+                        - generic [ref=e432]: "7."
+                        - text: flats
+                    - listitem [ref=e433]:
+                      - link "8. botas mujer" [ref=e434] [cursor=pointer]:
+                        - /url: /botas%20mujer?map=ft&_q=botas mujer
+                        - generic [ref=e435]: "8."
+                        - text: botas mujer
+                    - listitem [ref=e436]:
+                      - link "9. botines" [ref=e437] [cursor=pointer]:
+                        - /url: /botines?map=ft&_q=botines
+                        - generic [ref=e438]: "9."
+                        - text: botines
+                    - listitem [ref=e439]:
+                      - link "10. sneakers" [ref=e440] [cursor=pointer]:
+                        - /url: /sneakers?map=ft&_q=sneakers
+                        - generic [ref=e441]: "10."
+                        - text: sneakers
+  - generic [ref=e442]:
+    - img [ref=e443]
+    - iframe [ref=e444]:
+      - generic [ref=f35e6]:
+        - heading "SUSCRÍBETE y desbloquea REGALOS EXCLUSIVOS:" [level=2] [ref=f35e7]:
+          - strong [ref=f35e8]: SUSCRÍBETE
+          - text: y desbloquea
+          - text: REGALOS
+          - strong [ref=f35e9]: EXCLUSIVOS
+          - text: ":"
+        - paragraph [ref=f35e10]:
+          - text: 💌
+          - strong [ref=f35e11]: 15% de descuento
+          - text: en tu primera compra
+        - paragraph [ref=f35e12]:
+          - text: 🎉
+          - strong [ref=f35e13]: 10% de descuento
+          - text: en tu cumpleaños
+        - paragraph [ref=f35e14]:
+          - text: 👀
+          - strong [ref=f35e15]: Acceso anticipado
+          - text: a las rebajas
+        - textbox "TU NOMBRE" [ref=f35e16]
+        - textbox "TU CORREO ELECTRÓNICO" [ref=f35e17]
+        - generic [ref=f35e18]:
+          - text: TU FECHA DE NACIMIENTO
+          - textbox [ref=f35e19]
+        - button "QUIERO MI CUPÓN" [ref=f35e20] [cursor=pointer]
+        - paragraph [ref=f35e21]: "*Cupón válido para realizar una compra en mx.andrea.com/"

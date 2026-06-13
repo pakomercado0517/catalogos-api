@@ -13,9 +13,17 @@ module.exports = (sequelize) => {
       url: {
         type: DataTypes.STRING,
       },
+      category: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        defaultValue: "otros",
+      },
     },
     {
-      indexes: [{ name: "idx_catalogos_company_id", fields: ["companyId"] }],
+      indexes: [
+        { name: "idx_catalogos_company_id", fields: ["companyId"] },
+        { name: "idx_catalogos_category", fields: ["category"] },
+      ],
     }
   );
 };

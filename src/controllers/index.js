@@ -2,6 +2,7 @@
 const { Company, Catalogo } = require("../db");
 const { companyMap } = require("../DbData/companies");
 const scrapingFunction = require("../puppeteer/");
+const { CATALOG_CATEGORIES } = require("../constants/catalogCategories");
 const {
   enqueueScrapingJob,
   getJob,
@@ -54,6 +55,9 @@ module.exports = {
     } catch (error) {
       res.status(400).send(error);
     }
+  },
+  getCatalogCategories: async (req, res) => {
+    res.status(200).json(CATALOG_CATEGORIES);
   },
 
   getAllCatalogos: async (req, res) => {

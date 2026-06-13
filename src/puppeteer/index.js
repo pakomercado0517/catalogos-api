@@ -1,6 +1,7 @@
 const puppeteer = require("puppeteer");
 const { Company } = require("../db");
 const { syncCatalogosForCompany } = require("../services/catalogoSync");
+const { inferCatalogCategory } = require("../utils/catalogCategory");
 
 const BROWSER_ARGS = ["--no-sandbox", "--disable-setuid-sandbox"];
 const PAGE_TIMEOUT_MS =
@@ -54,7 +55,12 @@ async function priceShoes() {
       const href = await list.$eval("a[href]", (el) => el.href);
       if (enlace) {
         const imgSrc = await enlace.$eval("img", (item) => item.src);
-        catalogItems.push({ image: imgSrc, url: href });
+
+        catalogItems.push({
+          image: imgSrc,
+          url: href,
+          category: "otros",
+        });
       }
     }
 
@@ -81,46 +87,35 @@ async function andrea() {
     browser = await launchBrowser();
     const page = await createPage(browser);
     await gotoWithTimeout(page, "https://mx.andrea.com/catalogos");
-    await page.waitForSelector("select[name='estado']", {
-      timeout: PAGE_TIMEOUT_MS,
-    });
-    await page.select("select[name='estado']", "30");
-    await page.waitForSelector(
-      ".vicomstudio-catalogos-andrea-0-x-stateSelectorSubmit",
-      { timeout: PAGE_TIMEOUT_MS }
-    );
-    await page.click(".vicomstudio-catalogos-andrea-0-x-stateSelectorSubmit");
-    await page.click(".vicomstudio-catalogos-andrea-0-x-stateSelectorSubmit");
-
-    const main = await page.$(
-      ".vicomstudio-catalogos-andrea-0-x-catalogsWrapper"
-    );
-    await main.waitForSelector(
-      ".vicomstudio-catalogos-andrea-0-x-catalogsList",
-      {
-        timeout: PAGE_TIMEOUT_MS,
-      }
-    );
-    const ulList = await main.waitForSelector(
-      ".vicomstudio-catalogos-andrea-0-x-catalogsList",
-      { timeout: PAGE_TIMEOUT_MS }
-    );
-    const lists = await ulList.$$(
-      "li.vicomstudio-catalogos-andrea-0-x-catalog"
-    );
-
-    for (const list of lists) {
-      const enlace = await list.$("a");
-      const title = await list.$eval(
-        ".vicomstudio-catalogos-andrea-0-x-catalogTitle",
-        (t) => t.textContent
+    const catalogs = await page.evaluate(async () => {
+      const response = await fetch(
+        "/api/dataentities/CD/search?_where=IdEstado=30%20AND%20Activo=True&_fields=Alias,IdCatalogo,Imagen,id,IdGruposEstado,Orden&_sort=Orden",
+        { credentials: "include" }
       );
-      const href = await list.$eval("a[href]", (el) => el.href);
-      if (enlace) {
-        const imgSrc = await enlace.$eval("img", (item) => item.src);
-        catalogItems.push({ name: title, image: imgSrc, url: href });
+
+      if (!response.ok) {
+        throw new Error(`Andrea catalog API status ${response.status}`);
       }
-    }
+
+      return response.json();
+    });
+
+    catalogItems = catalogs.map((catalog) => {
+      const name = catalog.Alias;
+      const url = `https://cdn-img.andrea.com/MX/1/${catalog.IdCatalogo}`;
+      const image = `http://api.vtexcrm.com.br/andreamx/dataentities/CD/documents/${catalog.id}/Imagen/attachments/${catalog.Imagen}`;
+
+      return {
+        name,
+        image,
+        url,
+        category: inferCatalogCategory({
+          companyName: "andrea",
+          name,
+          url,
+        }),
+      };
+    });
 
     company = await Company.findOne({ where: { name: "andrea" } });
   } catch (error) {
@@ -159,7 +154,16 @@ async function cklass() {
       );
       if (enlace) {
         const imgSrc = await enlace.$eval("img", (item) => item.src);
-        catalogItems.push({ name: title, image: imgSrc, url: href });
+        catalogItems.push({
+          name: title,
+          image: imgSrc,
+          url: href,
+          category: inferCatalogCategory({
+            companyName: "cklass",
+            name: title,
+            url: href,
+          }),
+        });
       }
     }
 
@@ -197,7 +201,16 @@ async function vianney() {
       const h3 = await anchor.$("h3");
       const text = await (await h3.getProperty("textContent")).jsonValue();
 
-      catalogItems.push({ name: text, image: src, url: href });
+      catalogItems.push({
+        name: text,
+        image: src,
+        url: href,
+        category: inferCatalogCategory({
+          companyName: "vianney",
+          name: text,
+          url: href,
+        }),
+      });
     }
 
     company = await Company.findOne({ where: { name: "vianney" } });
@@ -239,7 +252,16 @@ async function concord() {
       const fileName = href.split("/").pop()?.replace(/\.pdf$/i, "") || "";
       const name = fileName.replace(/_/g, " ");
 
-      catalogItems.push({ name, image: src, url: href });
+      catalogItems.push({
+        name,
+        image: src,
+        url: href,
+        category: inferCatalogCategory({
+          companyName: "concord",
+          name,
+          url: href,
+        }),
+      });
     }
 
     company = await Company.findOne({ where: { name: "concord" } });
@@ -258,9 +280,15 @@ async function betterware() {
   const company = await Company.findOne({ where: { name: "betterware" } });
   const catalogItems = [
     {
+      name: "BETTERWARE",
       image:
         "https://is4-ssl.mzstatic.com/image/thumb/Purple124/v4/e0/72/d5/e072d57b-e76c-ec63-b844-9974409b61be/source/512x512bb.jpg",
       url: "https://www.betterware.com.mx/mx/es/catalogo",
+      category: inferCatalogCategory({
+        companyName: "betterware",
+        name: "BETTERWARE",
+        url: "https://www.betterware.com.mx/mx/es/catalogo",
+      }),
     },
   ];
 
