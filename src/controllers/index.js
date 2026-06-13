@@ -14,6 +14,7 @@ const {
   buildPaginationResponse,
 } = require("../utils/pagination");
 const { getCacheKey, get, set } = require("../utils/readCache");
+const { normalizeCatalogCategory } = require("../utils/catalogSanitize");
 
 module.exports = {
   createCompanies: async () => {
@@ -63,14 +64,37 @@ module.exports = {
   getAllCatalogos: async (req, res) => {
     try {
       const { limit, offset } = parsePagination(req.query);
-      const cacheKey = getCacheKey(["catalogos", "all", limit, offset]);
+      const rawCategory = req.query.category;
+      let categoryFilter = null;
+
+      if (rawCategory !== undefined && rawCategory !== "") {
+        const category = normalizeCatalogCategory(String(rawCategory));
+        if (!CATALOG_CATEGORIES.includes(category)) {
+          return res.status(400).json({
+            message: "Categoria invalida",
+            validCategories: CATALOG_CATEGORIES,
+          });
+        }
+        categoryFilter = category;
+      }
+
+      const cacheKey = getCacheKey([
+        "catalogos",
+        "all",
+        limit,
+        offset,
+        categoryFilter ?? "all",
+      ]);
       const cached = get(cacheKey);
 
       if (cached) {
         return res.status(200).json(cached);
       }
 
+      const where = categoryFilter ? { category: categoryFilter } : undefined;
+
       const { rows, count } = await Catalogo.findAndCountAll({
+        where,
         limit,
         offset,
         order: [["id", "ASC"]],
