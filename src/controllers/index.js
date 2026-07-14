@@ -217,13 +217,40 @@ module.exports = {
   getCompanyById: async (req, res) => {
     const { id } = req.params;
     try {
+      const { limit, offset } = parsePagination(req.query);
+      const cacheKey = getCacheKey([
+        "companies",
+        "information",
+        id,
+        limit,
+        offset,
+      ]);
+      const cached = get(cacheKey);
+
+      if (cached) {
+        return res.status(200).json(cached);
+      }
+
       const company = await Company.findOne({ where: { id } });
 
       if (!company) {
         return res.status(404).json({ message: "Empresa no encontrada" });
       }
 
-      res.status(200).json(company);
+      const { rows, count } = await Catalogo.findAndCountAll({
+        where: { companyId: id },
+        limit,
+        offset,
+        order: [["id", "ASC"]],
+      });
+
+      const payload = {
+        ...company.toJSON(),
+        ...buildPaginationResponse({ rows, count, limit, offset }),
+      };
+
+      set(cacheKey, payload);
+      res.status(200).json(payload);
     } catch (error) {
       res.status(400).json(error.message);
     }
